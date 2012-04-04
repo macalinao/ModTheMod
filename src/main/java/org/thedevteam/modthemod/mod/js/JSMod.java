@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.js;
+package org.thedevteam.modthemod.mod.js;
 
 import org.thedevteam.modthemod.mod.CommonMod;
 import org.thedevteam.modthemod.mod.ModDescription;

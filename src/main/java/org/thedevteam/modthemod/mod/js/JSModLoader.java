@@ -14,9 +14,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.js;
+package org.thedevteam.modthemod.mod.js;
 
 import com.google.common.base.Charsets;
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
+import org.mozilla.javascript.ScriptableObject;
 import org.thedevteam.modthemod.mod.Mod;
 import org.thedevteam.modthemod.mod.ModLoader;
 
@@ -28,6 +31,19 @@ public class JSModLoader implements ModLoader {
     @Override
     public Mod loadMod(byte[] data) {
         String js = new String(data, Charsets.UTF_8);
+
+        try {
+            Context cx = Context.enter();
+            Scriptable scope = cx.initStandardObjects();
+
+            Object wrappedOut = Context.javaToJS(System.out, scope);
+            ScriptableObject.putProperty(scope, "out", wrappedOut);
+
+            //Evaluate
+            cx.evaluateString(scope, js, "<mod>", 1, null);
+        } finally {
+            Context.exit();
+        }
 
         return null;
     }
