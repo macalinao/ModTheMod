@@ -16,8 +16,6 @@
  */
 package org.thedevteam.modthemod;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.spout.api.plugin.CommonPlugin;
 import static org.thedevteam.modthemod.MLogger.info;
 

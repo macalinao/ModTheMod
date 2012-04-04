@@ -26,14 +26,11 @@ import org.thedevteam.modthemod.MLogger;
  * Represents the description of a mod.
  */
 public class ModDescription {
+
     private final String description;
-
     private final String version;
-
     private final String author;
-
     private final List<String> authors;
-    
     private final String url;
 
     public ModDescription(String description, String version, String author, List<String> authors, String url) {
@@ -59,11 +56,11 @@ public class ModDescription {
     public List<String> getAuthors() {
         return authors;
     }
-    
+
     public String getUrl() {
         return url;
     }
-    
+
     /**
      * Loads a {@link ModDescripton} from data.
      * 
@@ -76,15 +73,41 @@ public class ModDescription {
             description = (String) data.get("description");
         } catch (NullPointerException ex) {
         } catch (ClassCastException ex) {
-            MLogger.log(Level.FINE, "The field \'description\' in a mod was not a String.", ex);
+            MLogger.log(Level.WARNING, "The field \'description\' in a mod was not a String.", ex);
         }
-        
+
         String version = "Unspecified";
+        try {
+            version = (String) data.get("version");
+        } catch (NullPointerException ex) {
+        } catch (ClassCastException ex) {
+            MLogger.log(Level.WARNING, "The field \'version\' in a mod was not a String.", ex);
+        }
+
         String author = "Unknown";
+        try {
+            version = (String) data.get("author");
+        } catch (NullPointerException ex) {
+        } catch (ClassCastException ex) {
+            MLogger.log(Level.FINE, "The field \'author\' in a mod was not a String.", ex);
+        }
+
         List<String> authors = new ArrayList<String>();
+        try {
+            version = (String) data.get("authors");
+        } catch (NullPointerException ex) {
+        } catch (ClassCastException ex) {
+            MLogger.log(Level.FINE, "The field \'authors\' in a mod was not a String.", ex);
+        }
+
         String url = "Unspecified";
-        
+        try {
+            version = (String) data.get("url");
+        } catch (NullPointerException ex) {
+        } catch (ClassCastException ex) {
+            MLogger.log(Level.FINE, "The field \'url\' in a mod was not a String.", ex);
+        }
+
         return new ModDescription(description, version, author, authors, url);
     }
-
 }
