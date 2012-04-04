@@ -24,8 +24,7 @@ import org.thedevteam.modthemod.mod.Mod;
 import org.thedevteam.modthemod.mod.ModLoader;
 
 /**
- *
- * @author simplyianm
+ * Represents a Javascript mod loader.
  */
 public class JSModLoader implements ModLoader {
     @Override

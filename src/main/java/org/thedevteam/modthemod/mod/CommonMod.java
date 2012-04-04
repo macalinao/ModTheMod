@@ -24,8 +24,8 @@ public abstract class CommonMod implements Mod {
 
     private final ModDescription description;
 
-    protected CommonMod(ModDescription description) {
-        this.name = description.getName();
+    protected CommonMod(String name, ModDescription description) {
+        this.name = name;
         this.description = description;
     }
 

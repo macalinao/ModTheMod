@@ -23,8 +23,8 @@ import org.thedevteam.modthemod.mod.ModDescription;
  * Represents a mod made in Javascript.
  */
 public class JSMod extends CommonMod {
-    public JSMod(ModDescription description) {
-        super(description);
+    public JSMod(String name, ModDescription description) {
+        super(name, description);
     }
 
 }

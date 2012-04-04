@@ -16,28 +16,40 @@
  */
 package org.thedevteam.modthemod.mod;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import org.thedevteam.modthemod.MLogger;
 
 /**
  * Represents the description of a mod.
  */
-public abstract class ModDescription {
-    private final String name;
+public class ModDescription {
+    private final String description;
 
-    private String description;
+    private final String version;
 
-    private String version;
+    private final String author;
 
-    private String author;
+    private final List<String> authors;
+    
+    private final String url;
 
-    private List<String> authors;
-
-    public ModDescription(String name) {
-        this.name = name;
+    public ModDescription(String description, String version, String author, List<String> authors, String url) {
+        this.description = description;
+        this.version = version;
+        this.author = author;
+        this.authors = authors;
+        this.url = url;
     }
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
+    }
+
+    public String getVersion() {
+        return version;
     }
 
     public String getAuthor() {
@@ -47,13 +59,32 @@ public abstract class ModDescription {
     public List<String> getAuthors() {
         return authors;
     }
-
-    public String getDescription() {
-        return description;
+    
+    public String getUrl() {
+        return url;
     }
-
-    public String getVersion() {
-        return version;
+    
+    /**
+     * Loads a {@link ModDescripton} from data.
+     * 
+     * @param data The data to load the {@link ModDescripton} from.
+     * @return The loaded {@link ModDescripton}.
+     */
+    public static ModDescription load(Map<String, Object> data) {
+        String description = "Default description.";
+        try {
+            description = (String) data.get("description");
+        } catch (NullPointerException ex) {
+        } catch (ClassCastException ex) {
+            MLogger.log(Level.FINE, "The field \'description\' in a mod was not a String.", ex);
+        }
+        
+        String version = "Unspecified";
+        String author = "Unknown";
+        List<String> authors = new ArrayList<String>();
+        String url = "Unspecified";
+        
+        return new ModDescription(description, version, author, authors, url);
     }
 
 }

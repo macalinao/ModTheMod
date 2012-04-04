@@ -16,7 +16,10 @@
  */
 package org.thedevteam.modthemod;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.spout.api.plugin.CommonPlugin;
+import static org.thedevteam.modthemod.MLogger.info;
 
 /**
  * ModTheMod main plugin file.
@@ -24,12 +27,24 @@ import org.spout.api.plugin.CommonPlugin;
 public class ModTheModPlugin extends CommonPlugin {
     @Override
     public void onEnable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //Setup logging
+        MLogger.setLogger(getLogger());
+        
+        //Start enabling
+        info("=============== MOD THE MOD ===============");
+        info("=========== MOD THE MOD ENABLED! ==========");
+        //Stop enabling
     }
 
     @Override
     public void onDisable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //Start disabling
+        info("=============== MOD THE MOD ===============");
+        info("========== MOD THE MOD DISABLED! ==========");
+        //Stop disabling
+        
+        //Unload logging.
+        MLogger.setLogger(null);
     }
 
 }
