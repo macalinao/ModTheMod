@@ -1,0 +1,10 @@
+## ${project.name} plugin file
+---
+name: ${project.name}
+description: ${project.description}
+url: ${project.url}
+version: ${project.description}
+author: THEDevTeam
+
+main: org.thedevteam.modthemod.ModTheModPlugin
+platform: BOTH

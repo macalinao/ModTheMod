@@ -1,0 +1,11 @@
+language: java
+
+notifications:
+  irc:
+    channels:
+      - "irc.esper.net#thedevteam"
+    template:
+      - "=== ModTheMod CI ==="
+      - "%{repository_url} (%{commit})"
+      - "%{author}: %{message} (Changes: %{compare_url}"
+      - "Build details: %{build_url}"
