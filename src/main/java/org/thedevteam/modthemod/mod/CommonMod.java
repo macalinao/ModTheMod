@@ -14,22 +14,24 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
-
-import org.spout.api.plugin.CommonPlugin;
+package org.thedevteam.modthemod.mod;
 
 /**
- * ModTheMod main plugin file.
+ * Represents a common mod.
  */
-public class ModTheModPlugin extends CommonPlugin {
-    @Override
-    public void onEnable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+public abstract class CommonMod implements Mod {
+    private final String name;
+
+    private final ModDescription description;
+
+    protected CommonMod(ModDescription description) {
+        this.name = description.getName();
+        this.description = description;
     }
 
     @Override
-    public void onDisable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public String getName() {
+        return this.name;
     }
 
 }

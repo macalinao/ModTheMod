@@ -14,22 +14,17 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
+package org.thedevteam.modthemod.js;
 
-import org.spout.api.plugin.CommonPlugin;
+import org.thedevteam.modthemod.mod.CommonMod;
+import org.thedevteam.modthemod.mod.ModDescription;
 
 /**
- * ModTheMod main plugin file.
+ * Represents a mod made in Javascript.
  */
-public class ModTheModPlugin extends CommonPlugin {
-    @Override
-    public void onEnable() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void onDisable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+public class JSMod extends CommonMod {
+    public JSMod(ModDescription description) {
+        super(description);
     }
 
 }

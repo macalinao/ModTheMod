@@ -14,22 +14,18 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
-
-import org.spout.api.plugin.CommonPlugin;
+package org.thedevteam.modthemod.mod;
 
 /**
- * ModTheMod main plugin file.
+ * Interface for loading mods.
  */
-public class ModTheModPlugin extends CommonPlugin {
-    @Override
-    public void onEnable() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void onDisable() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+public interface ModLoader {
+    /**
+     * Loads a mod from the given data.
+     *
+     * @param data The data to load from.
+     * @return The loaded mod.
+     */
+    public Mod loadMod(byte[] data);
 
 }

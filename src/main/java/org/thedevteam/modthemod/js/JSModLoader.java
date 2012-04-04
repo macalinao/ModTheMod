@@ -14,22 +14,22 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
+package org.thedevteam.modthemod.js;
 
-import org.spout.api.plugin.CommonPlugin;
+import com.google.common.base.Charsets;
+import org.thedevteam.modthemod.mod.Mod;
+import org.thedevteam.modthemod.mod.ModLoader;
 
 /**
- * ModTheMod main plugin file.
+ *
+ * @author simplyianm
  */
-public class ModTheModPlugin extends CommonPlugin {
+public class JSModLoader implements ModLoader {
     @Override
-    public void onEnable() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    public Mod loadMod(byte[] data) {
+        String js = new String(data, Charsets.UTF_8);
 
-    @Override
-    public void onDisable() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return null;
     }
 
 }
