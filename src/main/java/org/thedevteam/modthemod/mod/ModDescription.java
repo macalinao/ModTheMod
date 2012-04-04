@@ -28,9 +28,13 @@ import org.thedevteam.modthemod.MLogger;
 public class ModDescription {
 
     private final String description;
+
     private final String version;
+
     private final String author;
+
     private final List<String> authors;
+
     private final String url;
 
     public ModDescription(String description, String version, String author, List<String> authors, String url) {
@@ -110,4 +114,5 @@ public class ModDescription {
 
         return new ModDescription(description, version, author, authors, url);
     }
+
 }
