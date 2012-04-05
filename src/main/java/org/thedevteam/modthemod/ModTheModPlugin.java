@@ -23,13 +23,18 @@ import static org.thedevteam.modthemod.MLogger.info;
  * ModTheMod main plugin file.
  */
 public class ModTheModPlugin extends CommonPlugin {
+
+    private ModManager modManager;
+
     @Override
     public void onEnable() {
         //Setup logging
         MLogger.setLogger(getLogger());
-        
+
         //Start enabling
         info("=============== MOD THE MOD ===============");
+        info("=== Setting up the mod manager...");
+        modManager = new ModManager(this);
         info("=========== MOD THE MOD ENABLED! ==========");
         //Stop enabling
     }
@@ -40,9 +45,13 @@ public class ModTheModPlugin extends CommonPlugin {
         info("=============== MOD THE MOD ===============");
         info("========== MOD THE MOD DISABLED! ==========");
         //Stop disabling
-        
+
         //Unload logging.
         MLogger.setLogger(null);
+    }
+
+    public ModManager getModManager() {
+        return modManager;
     }
 
 }

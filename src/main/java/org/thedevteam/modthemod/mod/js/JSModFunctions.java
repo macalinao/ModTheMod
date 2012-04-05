@@ -16,16 +16,22 @@
  */
 package org.thedevteam.modthemod.mod.js;
 
-import org.thedevteam.modthemod.mod.CommonMod;
+import java.util.Map;
+import org.thedevteam.modthemod.ModTheMod;
 import org.thedevteam.modthemod.mod.ModDescription;
-import org.thedevteam.modthemod.mod.ModType;
+import org.thedevteam.modthemod.mod.ModFunctions;
 
 /**
- * Represents a mod made in Javascript.
+ * Contains mod functions for Javascript.
  */
-public class JSMod extends CommonMod {
-    public JSMod(String name, ModDescription description) {
-        super(ModType.JAVASCRIPT, name, description);
-    }
+public class JSModFunctions extends ModFunctions {
 
+    @Override
+    public JSMod createMod(String name, Map<String, Object> description) {
+        ModDescription desc = ModDescription.load(description);
+        JSMod mod = new JSMod(name, desc);
+        ModTheMod.getModManager().registerMod(mod);
+        return mod;
+    }
+    
 }

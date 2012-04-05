@@ -14,18 +14,37 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod.js;
+package org.thedevteam.modthemod;
 
-import org.thedevteam.modthemod.mod.CommonMod;
-import org.thedevteam.modthemod.mod.ModDescription;
-import org.thedevteam.modthemod.mod.ModType;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import org.thedevteam.modthemod.mod.Mod;
 
 /**
- * Represents a mod made in Javascript.
+ * Manages our mods.
  */
-public class JSMod extends CommonMod {
-    public JSMod(String name, ModDescription description) {
-        super(ModType.JAVASCRIPT, name, description);
+public class ModManager {
+
+    private final ModTheModPlugin plugin;
+
+    private final Map<String, Mod> names = new HashMap<String, Mod>();
+
+    private List<Mod> mods = new ArrayList<Mod>();
+
+    public ModManager(ModTheModPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    /**
+     * Registers an arbitrary mod with the mod manager.
+     * 
+     * @param mod The mod to register.
+     */
+    public void registerMod(Mod mod) {
+        names.put(mod.getName(), mod);
+        mods.add(mod);
     }
 
 }

@@ -28,4 +28,10 @@ public interface ModLoader {
      */
     public Mod loadMod(byte[] data);
 
+    /**
+     * Gets the type of ModLoader this is.
+     * 
+     * @return The type of ModLoader.
+     */
+    public ModType getType();
 }

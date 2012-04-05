@@ -14,18 +14,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod.js;
+package org.thedevteam.modthemod.mod;
 
-import org.thedevteam.modthemod.mod.CommonMod;
-import org.thedevteam.modthemod.mod.ModDescription;
-import org.thedevteam.modthemod.mod.ModType;
+import java.util.Map;
 
 /**
- * Represents a mod made in Javascript.
+ * Contains methods to create Javascript mods.
  */
-public class JSMod extends CommonMod {
-    public JSMod(String name, ModDescription description) {
-        super(ModType.JAVASCRIPT, name, description);
-    }
+public abstract class ModFunctions {
+
+    public abstract Mod createMod(String name, Map<String, Object> data);
 
 }
