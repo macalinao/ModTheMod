@@ -20,13 +20,13 @@ package org.thedevteam.modthemod.mod;
  * Represents a common mod.
  */
 public abstract class CommonMod implements Mod {
-    private final ModType type;
+    private final ModLanguage type;
     
     private final String name;
 
-    private final ModDescription description;
+    private final Description description;
 
-    protected CommonMod(ModType type, String name, ModDescription description) {
+    protected CommonMod(ModLanguage type, String name, Description description) {
         this.type = type;
         this.name = name;
         this.description = description;
@@ -37,7 +37,7 @@ public abstract class CommonMod implements Mod {
         return this.name;
     }
 
-    public ModDescription getDescription() {
+    public Description getDescription() {
         return description;
     }
 

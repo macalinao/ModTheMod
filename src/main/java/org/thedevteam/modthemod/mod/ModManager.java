@@ -16,13 +16,36 @@
  */
 package org.thedevteam.modthemod.mod;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import org.thedevteam.modthemod.ModTheModPlugin;
+import org.thedevteam.modthemod.mod.Mod;
 
 /**
- * Contains methods to create Javascript mods.
+ * Manages our mods.
  */
-public abstract class ModFunctions {
+public class ModManager {
 
-    public abstract Mod createMod(String name, Map<String, Object> data);
+    private final ModTheModPlugin plugin;
+
+    private final Map<String, Mod> names = new HashMap<String, Mod>();
+
+    private List<Mod> mods = new ArrayList<Mod>();
+
+    public ModManager(ModTheModPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    /**
+     * Registers an arbitrary mod with the mod manager.
+     * 
+     * @param mod The mod to register.
+     */
+    public void registerMod(Mod mod) {
+        names.put(mod.getName(), mod);
+        mods.add(mod);
+    }
 
 }

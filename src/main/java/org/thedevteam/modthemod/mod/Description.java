@@ -25,7 +25,7 @@ import org.thedevteam.modthemod.MLogger;
 /**
  * Represents the description of a mod.
  */
-public class ModDescription {
+public class Description {
 
     private final String description;
 
@@ -37,7 +37,7 @@ public class ModDescription {
 
     private final String url;
 
-    public ModDescription(String description, String version, String author, List<String> authors, String url) {
+    public Description(String description, String version, String author, List<String> authors, String url) {
         this.description = description;
         this.version = version;
         this.author = author;
@@ -71,7 +71,7 @@ public class ModDescription {
      * @param data The data to load the {@link ModDescripton} from.
      * @return The loaded {@link ModDescripton}.
      */
-    public static ModDescription load(Map<String, Object> data) {
+    public static Description load(Map<String, Object> data) {
         String description = "Default description.";
         try {
             description = (String) data.get("description");
@@ -112,7 +112,7 @@ public class ModDescription {
             MLogger.log(Level.FINE, "The field \'url\' in a mod was not a String.", ex);
         }
 
-        return new ModDescription(description, version, author, authors, url);
+        return new Description(description, version, author, authors, url);
     }
 
 }

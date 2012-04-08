@@ -14,24 +14,38 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package org.thedevteam.modthemod.part;
+
+import java.util.regex.Pattern;
 
 /**
- * Interface for loading mods.
+ * Base class for PartTypes.
  */
-public interface ModLoader {
-    /**
-     * Loads a mod from the given data.
-     *
-     * @param data The data to load from.
-     * @return The loaded mod.
-     */
-    public Mod loadMod(byte[] data);
+public class CommonPartType implements PartType {
+
+    private final String name;
 
     /**
-     * Gets the type of ModLoader this is.
-     * 
-     * @return The type of ModLoader.
+     * Creates a CommonPartType.
+     *
+     * @param name The name of the part type. It should only consist of
+     * alphanumeric characters and spaces.
      */
-    public ModLanguage getType();
+    public CommonPartType(String name) {
+        if (!name.matches("[A-Za-z0-9 ]+")) {
+            throw new IllegalArgumentException("Invalid part name '" + name + "'!");
+        }
+        this.name = name;
+    }
+
+    @Override
+    public String getId() {
+        return name.toLowerCase().replace(' ', '-');
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
 }

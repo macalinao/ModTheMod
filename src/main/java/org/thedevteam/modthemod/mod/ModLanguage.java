@@ -14,37 +14,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import org.thedevteam.modthemod.mod.Mod;
+package org.thedevteam.modthemod.mod;
 
 /**
- * Manages our mods.
+ * Represents types of mods.
  */
-public class ModManager {
-
-    private final ModTheModPlugin plugin;
-
-    private final Map<String, Mod> names = new HashMap<String, Mod>();
-
-    private List<Mod> mods = new ArrayList<Mod>();
-
-    public ModManager(ModTheModPlugin plugin) {
-        this.plugin = plugin;
-    }
-
-    /**
-     * Registers an arbitrary mod with the mod manager.
-     * 
-     * @param mod The mod to register.
-     */
-    public void registerMod(Mod mod) {
-        names.put(mod.getName(), mod);
-        mods.add(mod);
-    }
-
+public enum ModLanguage {
+    JAVASCRIPT;
 }

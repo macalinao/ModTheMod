@@ -14,11 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package org.thedevteam.modthemod.event;
+
+import org.spout.api.event.Event;
 
 /**
- * Represents types of mods.
+ * Interface for methods that handle events.
  */
-public enum ModType {
-    JAVASCRIPT;
+public interface EventHandler<T extends Event> {
+
+    /**
+     * Handles the event.
+     *
+     * @param event The event to handle.
+     */
+    public void handle(T event);
+
 }

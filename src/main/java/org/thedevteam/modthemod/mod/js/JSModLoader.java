@@ -22,7 +22,7 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 import org.thedevteam.modthemod.mod.Mod;
 import org.thedevteam.modthemod.mod.ModLoader;
-import org.thedevteam.modthemod.mod.ModType;
+import org.thedevteam.modthemod.mod.ModLanguage;
 
 /**
  * Represents a Javascript mod loader.
@@ -49,8 +49,8 @@ public class JSModLoader implements ModLoader {
     }
 
     @Override
-    public final ModType getType() {
-        return ModType.JAVASCRIPT;
+    public final ModLanguage getType() {
+        return ModLanguage.JAVASCRIPT;
     }
 
 }

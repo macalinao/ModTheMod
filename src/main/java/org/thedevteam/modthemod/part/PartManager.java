@@ -14,24 +14,33 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod.js;
+package org.thedevteam.modthemod.part;
 
+import java.util.HashMap;
 import java.util.Map;
-import org.thedevteam.modthemod.ModTheMod;
-import org.thedevteam.modthemod.mod.ModDescription;
-import org.thedevteam.modthemod.mod.ModFunctions;
+import org.thedevteam.modthemod.ModTheModPlugin;
 
 /**
- * Contains mod functions for Javascript.
+ * Manages parts.
  */
-public class JSModFunctions extends ModFunctions {
+public class PartManager {
 
-    @Override
-    public JSMod createMod(String name, Map<String, Object> description) {
-        ModDescription desc = ModDescription.load(description);
-        JSMod mod = new JSMod(name, desc);
-        ModTheMod.getModManager().registerMod(mod);
-        return mod;
+    private final ModTheModPlugin plugin;
+
+    private Map<String, PartType> partTypes = new HashMap<String, PartType>();
+
+    public PartManager(ModTheModPlugin plugin) {
+        this.plugin = plugin;
     }
-    
+
+    /**
+     * Gets a PartType from its id.
+     *
+     * @param id The id of the {@link PartType}.
+     * @return The {@link PartType}.
+     */
+    public PartType getType(String id) {
+        return partTypes.get(id.toLowerCase().replace(' ', '-'));
+    }
+
 }

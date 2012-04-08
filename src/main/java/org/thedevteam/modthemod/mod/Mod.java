@@ -16,11 +16,36 @@
  */
 package org.thedevteam.modthemod.mod;
 
+import java.util.Map;
 import org.spout.api.Source;
 import org.spout.api.util.Named;
+import org.thedevteam.modthemod.part.Part;
 
 /**
  * Represents a Mod.
  */
 public interface Mod extends Source, Named {
+
+    /**
+     * Gets the name of the mod.
+     *
+     * @return The name of the mod.
+     */
+    @Override
+    public String getName();
+
+    /**
+     * Gets the description of the mod.
+     *
+     * @return The description of the mod.
+     */
+    public Description getDescription();
+
+    /**
+     * Gets the parts of the mod.
+     *
+     * @return The parts of the mod.
+     */
+    public Map<String, Part> getParts();
+
 }

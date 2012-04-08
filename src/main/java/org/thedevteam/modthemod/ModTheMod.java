@@ -16,6 +16,8 @@
  */
 package org.thedevteam.modthemod;
 
+import org.thedevteam.modthemod.mod.ModManager;
+
 /**
  * ModTheMod API.
  */

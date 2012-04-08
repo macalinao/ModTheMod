@@ -16,6 +16,7 @@
  */
 package org.thedevteam.modthemod;
 
+import org.thedevteam.modthemod.mod.ModManager;
 import org.spout.api.plugin.CommonPlugin;
 import static org.thedevteam.modthemod.MLogger.info;
 

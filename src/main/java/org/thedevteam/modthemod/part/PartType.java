@@ -14,24 +14,38 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package org.thedevteam.modthemod.part;
+
+import org.thedevteam.modthemod.mod.Description;
 
 /**
- * Interface for loading mods.
+ * Represents a part, or a section of a plugin.
+ *
+ * <p>Parts will generally consist of modules that can be added to the plugin.
+ * An example of this would be a Command part which would allow users to create
+ * commands via a new part.</p>
  */
-public interface ModLoader {
-    /**
-     * Loads a mod from the given data.
-     *
-     * @param data The data to load from.
-     * @return The loaded mod.
-     */
-    public Mod loadMod(byte[] data);
+public interface PartType {
 
     /**
-     * Gets the type of ModLoader this is.
-     * 
-     * @return The type of ModLoader.
+     * Gets the id of the part.
+     *
+     * @return The id of the part.
      */
-    public ModLanguage getType();
+    public String getId();
+
+    /**
+     * Gets the name of the part.
+     *
+     * @return The name of the part.
+     */
+    public String getName();
+
+    /**
+     * Gets the description of the part.
+     *
+     * @return The description of the part.
+     */
+    public Description getDescription();
+
 }

@@ -16,16 +16,24 @@
  */
 package org.thedevteam.modthemod.mod.js;
 
+import java.util.Map;
 import org.thedevteam.modthemod.mod.CommonMod;
-import org.thedevteam.modthemod.mod.ModDescription;
-import org.thedevteam.modthemod.mod.ModType;
+import org.thedevteam.modthemod.mod.Description;
+import org.thedevteam.modthemod.mod.ModLanguage;
+import org.thedevteam.modthemod.part.Part;
 
 /**
  * Represents a mod made in Javascript.
  */
 public class JSMod extends CommonMod {
-    public JSMod(String name, ModDescription description) {
-        super(ModType.JAVASCRIPT, name, description);
+
+    public JSMod(String name, Description description) {
+        super(ModLanguage.JAVASCRIPT, name, description);
+    }
+
+    @Override
+    public Map<String, Part> getParts() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }
