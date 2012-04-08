@@ -40,6 +40,7 @@ public abstract class CommonMod implements Mod {
         this.parts = parts;
     }
 
+    @Override
     public ModLanguage getLanguage() {
         return language;
     }

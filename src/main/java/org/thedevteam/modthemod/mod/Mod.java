@@ -27,6 +27,13 @@ import org.thedevteam.modthemod.part.Part;
 public interface Mod extends Source, Named {
 
     /**
+     * Gets the language the mod was written in.
+     *
+     * @return The language the mod was written in.
+     */
+    public ModLanguage getLanguage();
+
+    /**
      * Gets the name of the mod.
      *
      * @return The name of the mod.
