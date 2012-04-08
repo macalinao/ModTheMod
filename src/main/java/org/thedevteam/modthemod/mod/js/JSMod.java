@@ -25,15 +25,10 @@ import org.thedevteam.modthemod.part.Part;
 /**
  * Represents a mod made in Javascript.
  */
-public class JSMod extends CommonMod {
+public final class JSMod extends CommonMod {
 
-    public JSMod(String name, Description description) {
-        super(ModLanguage.JAVASCRIPT, name, description);
-    }
-
-    @Override
-    public Map<String, Part> getParts() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    JSMod(String name, Description description, Map<String, Part> parts) {
+        super(ModLanguage.JAVASCRIPT, name, description, parts);
     }
 
 }

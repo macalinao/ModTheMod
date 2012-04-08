@@ -16,20 +16,32 @@
  */
 package org.thedevteam.modthemod.mod;
 
+import java.util.HashMap;
+import java.util.Map;
+import org.thedevteam.modthemod.part.Part;
+
 /**
  * Represents a common mod.
  */
 public abstract class CommonMod implements Mod {
-    private final ModLanguage type;
-    
+
+    private final ModLanguage language;
+
     private final String name;
 
     private final Description description;
 
-    protected CommonMod(ModLanguage type, String name, Description description) {
-        this.type = type;
+    private final Map<String, Part> parts;
+
+    protected CommonMod(ModLanguage language, String name, Description description, Map<String, Part> parts) {
+        this.language = language;
         this.name = name;
         this.description = description;
+        this.parts = parts;
+    }
+
+    public ModLanguage getLanguage() {
+        return language;
     }
 
     @Override
@@ -37,8 +49,14 @@ public abstract class CommonMod implements Mod {
         return this.name;
     }
 
+    @Override
     public Description getDescription() {
         return description;
+    }
+
+    @Override
+    public Map<String, Part> getParts() {
+        return new HashMap<String, Part>(parts);
     }
 
 }
