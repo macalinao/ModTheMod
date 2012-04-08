@@ -17,34 +17,31 @@
 package org.thedevteam.modthemod.part;
 
 import org.thedevteam.modthemod.mod.Description;
+import org.thedevteam.modthemod.mod.ModLanguage;
 
 /**
- * Represents a part, or a section of a plugin.
- *
- * <p>Parts will generally consist of modules that can be added to the plugin.
- * An example of this would be a Command part which would allow users to create
- * commands via a new part.</p>
+ * Represents a type of {@link Part}.
  */
 public interface PartType {
 
     /**
-     * Gets the id of the part.
+     * Gets the language this {@link PartType} was written in.
      *
-     * @return The id of the part.
+     * @return The language this {@link PartType} was written in.
      */
-    public String getId();
+    public ModLanguage getLanguage();
 
     /**
-     * Gets the name of the part.
+     * Gets the name of the part type.
      *
-     * @return The name of the part.
+     * @return The name of the part type.
      */
     public String getName();
 
     /**
-     * Gets the description of the part.
+     * Gets the description of the part type.
      *
-     * @return The description of the part.
+     * @return The description of the part type.
      */
     public Description getDescription();
 

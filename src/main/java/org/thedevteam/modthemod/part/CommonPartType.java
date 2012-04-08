@@ -16,14 +16,19 @@
  */
 package org.thedevteam.modthemod.part;
 
-import java.util.regex.Pattern;
+import org.thedevteam.modthemod.mod.Description;
+import org.thedevteam.modthemod.mod.ModLanguage;
 
 /**
  * Base class for PartTypes.
  */
 public class CommonPartType implements PartType {
 
+    private final ModLanguage language;
+
     private final String name;
+
+    private final Description description;
 
     /**
      * Creates a CommonPartType.
@@ -31,21 +36,30 @@ public class CommonPartType implements PartType {
      * @param name The name of the part type. It should only consist of
      * alphanumeric characters and spaces.
      */
-    public CommonPartType(String name) {
-        if (!name.matches("[A-Za-z0-9 ]+")) {
-            throw new IllegalArgumentException("Invalid part name '" + name + "'!");
-        }
+    public CommonPartType(ModLanguage language, String name, Description description) {
+        this.language = language;
         this.name = name;
+        this.description = description;
     }
 
-    @Override
-    public String getId() {
-        return name.toLowerCase().replace(' ', '-');
-    }
-
+    /**
+     * Gets the name of the part type.
+     *
+     * @return The name of the part type.
+     */
     @Override
     public String getName() {
         return name;
+    }
+
+    /**
+     * Gets the description of the part type.
+     *
+     * @return The description of the part type.
+     */
+    @Override
+    public Description getDescription() {
+        return description;
     }
 
 }
