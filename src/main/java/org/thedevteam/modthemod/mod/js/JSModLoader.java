@@ -17,6 +17,7 @@
 package org.thedevteam.modthemod.mod.js;
 
 import com.google.common.base.Charsets;
+import org.mozilla.javascript.Callable;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
@@ -28,6 +29,7 @@ import org.thedevteam.modthemod.mod.ModLanguage;
  * Represents a Javascript mod loader.
  */
 public class JSModLoader implements ModLoader {
+
     @Override
     public Mod loadMod(byte[] data) {
         String js = new String(data, Charsets.UTF_8);
@@ -35,9 +37,44 @@ public class JSModLoader implements ModLoader {
         try {
             Context cx = Context.enter();
             Scriptable scope = cx.initStandardObjects();
+            
+            //Define mod
+            scope.put("defineMod", scope, new Callable() {
 
-            Object wrappedOut = Context.javaToJS(System.out, scope);
-            ScriptableObject.putProperty(scope, "out", wrappedOut);
+                @Override
+                public Object call(Context cx, Scriptable scope, Scriptable thisObj, Object[] args) {
+                    if (args.length < 1) {
+                        return false;
+                    }
+                    
+                    if (!(args[0] instanceof Scriptable)) {
+                        return false;
+                    }
+                    
+                    Scriptable modData = (Scriptable) args[0];
+                    
+                    //Name
+                    Object nameObj = modData.get("name", modData);
+                    if (nameObj == null) {
+                        return false;
+                    }
+                    String name = nameObj.toString();
+                    
+                    //Description
+                    Object descObj = modData.get("description", modData);
+                    if (!(descObj instanceof Scriptable)) {
+                        return false;
+                    }
+                    Scriptable desc = (Scriptable) descObj;
+                    
+                    
+                    
+                    //Parts
+                    
+                    return null;
+                }
+
+            });
 
             //Evaluate
             cx.evaluateString(scope, js, "<mod>", 1, null);
