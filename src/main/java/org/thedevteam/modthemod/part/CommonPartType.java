@@ -42,21 +42,16 @@ public class CommonPartType implements PartType {
         this.description = description;
     }
 
-    /**
-     * Gets the name of the part type.
-     *
-     * @return The name of the part type.
-     */
+    @Override
+    public ModLanguage getLanguage() {
+        return language;
+    }
+
     @Override
     public String getName() {
         return name;
     }
 
-    /**
-     * Gets the description of the part type.
-     *
-     * @return The description of the part type.
-     */
     @Override
     public Description getDescription() {
         return description;
