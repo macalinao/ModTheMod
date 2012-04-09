@@ -1,4 +1,4 @@
-ModTheMod
+ModTheMod ![Build status](https://secure.travis-ci.org/THEDevTeam/ModTheMod.png?branch=master)
 =========
 
 Introduction
