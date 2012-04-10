@@ -14,18 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
+package org.thedevteam.modthemod.spout;
 
-import org.thedevteam.modthemod.mod.ModManager;
 import org.spout.api.plugin.CommonPlugin;
+import org.thedevteam.modthemod.MLogger;
 import static org.thedevteam.modthemod.MLogger.info;
+import org.thedevteam.modthemod.ModTheModCore;
+import org.thedevteam.modthemod.mod.ModManager;
 
 /**
  * ModTheMod main plugin file.
  */
-public class ModTheModPlugin extends CommonPlugin {
+public class MTMSpoutPlugin extends CommonPlugin {
 
-    private ModManager modManager;
+    private ModTheModCore core;
 
     @Override
     public void onEnable() {
@@ -34,8 +36,8 @@ public class ModTheModPlugin extends CommonPlugin {
 
         //Start enabling
         info("=============== MOD THE MOD ===============");
-        info("=== Setting up the mod manager...");
-        modManager = new ModManager(this);
+        this.core = new ModTheModCore();
+        core.initialize();
         info("=========== MOD THE MOD ENABLED! ==========");
         //Stop enabling
     }
@@ -49,10 +51,6 @@ public class ModTheModPlugin extends CommonPlugin {
 
         //Unload logging.
         MLogger.setLogger(null);
-    }
-
-    public ModManager getModManager() {
-        return modManager;
     }
 
 }

@@ -19,46 +19,30 @@ package org.thedevteam.modthemod;
 import org.thedevteam.modthemod.mod.ModManager;
 
 /**
- * ModTheMod API.
+ * The core for ModTheMod.
  */
-public class ModTheMod {
+public class ModTheModCore {
 
     /**
-     * The instance of the {@link ModTheModCore} to use.
+     * The {@link ModManager}.
      */
-    private static ModTheModCore instance;
-
-    /**
-     * Default constructor to prevent creation of this class.
-     */
-    private ModTheMod() {
-    }
-
-    /**
-     * Sets the {@link ModTheModCore} to use.
-     *
-     * @param core The {@link ModTheModCore} to use.
-     */
-    static void setCore(ModTheModCore core) {
-        instance = core;
-    }
-
-    /**
-     * Gets the {@link ModTheModCore} currently in use.
-     *
-     * @return The {@link ModTheModCore} currently in use.
-     */
-    private static ModTheModCore getCore() {
-        return instance;
-    }
+    private ModManager modManager;
 
     /**
      * Gets the {@link ModManager}.
      *
      * @return The {@link ModManager}.
      */
-    public static ModManager getModManager() {
-        return getCore().getModManager();
+    public ModManager getModManager() {
+        return this.modManager;
+    }
+
+    /**
+     * Initializes the core.
+     */
+    public void initialize() {
+        MLogger.info("== Loading the Mod Manager... ==");
+        modManager = new ModManager(this);
     }
 
 }

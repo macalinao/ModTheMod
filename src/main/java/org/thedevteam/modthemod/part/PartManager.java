@@ -18,18 +18,18 @@ package org.thedevteam.modthemod.part;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.thedevteam.modthemod.ModTheModPlugin;
+import org.thedevteam.modthemod.spout.MTMSpoutPlugin;
 
 /**
  * Manages parts.
  */
 public class PartManager {
 
-    private final ModTheModPlugin plugin;
+    private final MTMSpoutPlugin plugin;
 
     private Map<String, PartType> partTypes = new HashMap<String, PartType>();
 
-    public PartManager(ModTheModPlugin plugin) {
+    public PartManager(MTMSpoutPlugin plugin) {
         this.plugin = plugin;
     }
 

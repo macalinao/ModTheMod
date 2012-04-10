@@ -20,7 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.thedevteam.modthemod.ModTheModPlugin;
+import org.thedevteam.modthemod.ModTheModCore;
+import org.thedevteam.modthemod.spout.MTMSpoutPlugin;
 import org.thedevteam.modthemod.mod.Mod;
 
 /**
@@ -28,19 +29,19 @@ import org.thedevteam.modthemod.mod.Mod;
  */
 public class ModManager {
 
-    private final ModTheModPlugin plugin;
+    private final ModTheModCore mtm;
 
     private final Map<String, Mod> names = new HashMap<String, Mod>();
 
     private List<Mod> mods = new ArrayList<Mod>();
 
-    public ModManager(ModTheModPlugin plugin) {
-        this.plugin = plugin;
+    public ModManager(ModTheModCore mtm) {
+        this.mtm = mtm;
     }
 
     /**
      * Registers an arbitrary mod with the mod manager.
-     * 
+     *
      * @param mod The mod to register.
      */
     public void registerMod(Mod mod) {

@@ -6,5 +6,5 @@ url: ${project.url}
 version: ${project.description}
 author: THEDevTeam
 
-main: org.thedevteam.modthemod.ModTheModPlugin
+main: org.thedevteam.modthemod.spout.MTMSpoutPlugin
 platform: BOTH

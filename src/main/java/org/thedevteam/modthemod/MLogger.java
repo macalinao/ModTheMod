@@ -23,44 +23,56 @@ import java.util.logging.Logger;
  * ModTheMod main logger.
  */
 public class MLogger {
-    private static Logger logger;
-    
+
+    /**
+     * The {@link Logger} instance that will be used.
+     */
+    private static Logger loggerInstance;
+
+    /**
+     * Private constructor to prevent instances of this class.
+     */
+    private MLogger() {
+    }
+
     /**
      * Sets the logger. Internal use only.
-     * 
+     *
      * @param logger The {@link Logger} to use.
      */
-    static void setLogger(Logger logger) {
-        MLogger.logger = logger;
+    public static void setLogger(final Logger logger) {
+        loggerInstance = logger;
     }
-    
+
     /**
      * Logs info to the console.
-     * 
-     * @param message 
+     *
+     * @param message The message to print to the console with a logging level
+     * of "info".
      */
-    public static void info(String message) {
-        logger.log(Level.INFO, message);
+    public static void info(final String message) {
+        loggerInstance.log(Level.INFO, message);
     }
-    
+
     /**
      * Logs a message.
-     * 
-     * @param level
-     * @param message 
+     *
+     * @param level The logging level to use for the message.
+     * @param message The message to print to the console.
      */
-    public static void log(Level level, String message) {
-        logger.log(level, message);
+    public static void log(final Level level, final String message) {
+        loggerInstance.log(level, message);
     }
-    
+
     /**
      * Logs a message with a {@link Throwable}.
-     * 
-     * @param level
-     * @param message
-     * @param cause 
+     *
+     * @param level The logging level to use for the message.
+     * @param message The message to print to the console.
+     * @param cause The cause of the logging.
      */
-    public static void log(Level level, String message, Throwable cause) {
-        logger.log(level, message, cause);
+    public static void log(final Level level, final String message, final Throwable cause) {
+        loggerInstance.log(level, message, cause);
     }
+
 }
