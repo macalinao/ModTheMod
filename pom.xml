@@ -31,21 +31,21 @@
 
     <!-- Source code -->
     <scm>
-        <developerConnection>scm:git:git@github.com:THEDevTeam/${project.name}.git</developerConnection>
-        <connection>scm:git:git://github.com/THEDevTeam/${project.name}.git</connection>
-        <url>https://github.com/THEDevTeam/${project.name}</url>
+        <developerConnection>scm:git:git@github.com:simplyianm/${project.name}.git</developerConnection>
+        <connection>scm:git:git://github.com/simplyianm/${project.name}.git</connection>
+        <url>https://github.com/simplyianm/${project.name}</url>
     </scm>
     
     <!-- Issue Management -->
     <issueManagement>
         <system>github</system>
-        <url>http://github.com/TheDEVTeam/{@project.name}/issues</url>
+        <url>http://github.com/simplyianm/{@project.name}/issues</url>
     </issueManagement>
 
     <!-- Continuous integration -->
     <ciManagement>
         <system>travis-ci</system>
-        <url>http://travis-ci.org/#!/THEDevTeam/ModTheMod</url>
+        <url>http://travis-ci.org/#!/simplyianm/ModTheMod</url>
     </ciManagement>
     
     <!-- Developers -->
@@ -76,6 +76,10 @@
         <pluginRepository>
             <id>spout-plugins</id>
             <url>http://repo.spout.org</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>oss-sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </pluginRepository>
     </pluginRepositories>
 
@@ -285,6 +289,48 @@
                         </plugin>
                     </reportPlugins>
                 </configuration>
+            </plugin>
+            <!-- Github Maven core plugin -->
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>github-maven-core</artifactId>
+                <version>0.4-SNAPSHOT</version>
+            </plugin>
+            <!-- Github downloads -->
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>downloads-maven-plugin</artifactId>
+                <version>0.4</version>
+                <configuration>
+                    <description>Version ${project.version} of ${project.name}</description>
+                    <override>true</override>
+                    <includeAttached>true</includeAttached>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>upload</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Github site -->
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.5</version>
+                <configuration>
+                    <message>Committing site of ${project.version}.</message>
+                </configuration>      
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
