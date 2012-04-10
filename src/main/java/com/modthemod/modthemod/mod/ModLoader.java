@@ -20,6 +20,7 @@ package com.modthemod.modthemod.mod;
  * Interface for loading mods.
  */
 public interface ModLoader {
+
     /**
      * Loads a mod from the given data.
      *
@@ -30,8 +31,9 @@ public interface ModLoader {
 
     /**
      * Gets the type of ModLoader this is.
-     * 
+     *
      * @return The type of ModLoader.
      */
     public ModLanguage getType();
+
 }

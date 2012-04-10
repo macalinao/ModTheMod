@@ -9,5 +9,4 @@ package com.modthemod.modthemod.part;
  * @author simplyianm
  */
 public class PartHandlers {
-    
 }

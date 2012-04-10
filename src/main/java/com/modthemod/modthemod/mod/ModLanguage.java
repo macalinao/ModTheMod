@@ -20,5 +20,7 @@ package com.modthemod.modthemod.mod;
  * Represents types of mods.
  */
 public enum ModLanguage {
+
     JAVASCRIPT;
+
 }

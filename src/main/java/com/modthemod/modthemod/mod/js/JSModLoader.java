@@ -19,13 +19,12 @@ package com.modthemod.modthemod.mod.js;
 import com.google.common.base.Charsets;
 import com.modthemod.modthemod.MLogger;
 import com.modthemod.modthemod.mod.Description;
-import org.mozilla.javascript.Callable;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
-import org.mozilla.javascript.ScriptableObject;
 import com.modthemod.modthemod.mod.Mod;
 import com.modthemod.modthemod.mod.ModLoader;
 import com.modthemod.modthemod.mod.ModLanguage;
+import com.modthemod.modthemod.mod.js.functions.FunctionDefineMod;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +35,8 @@ import java.util.logging.Level;
  */
 public class JSModLoader implements ModLoader {
 
+    private final FunctionDefineMod functionDefineMod = new FunctionDefineMod(this);
+
     @Override
     public Mod loadMod(byte[] data) {
         String js = new String(data, Charsets.UTF_8);
@@ -45,41 +46,7 @@ public class JSModLoader implements ModLoader {
             Scriptable scope = cx.initStandardObjects();
 
             //Define mod
-            scope.put("defineMod", scope, new Callable() {
-
-                @Override
-                public Object call(Context cx, Scriptable scope, Scriptable thisObj, Object[] args) {
-                    if (args.length < 1) {
-                        return false;
-                    }
-
-                    if (!( args[0] instanceof Scriptable )) {
-                        return false;
-                    }
-
-                    Scriptable modData = (Scriptable) args[0];
-
-                    //Name
-                    Object nameObj = modData.get("name", modData);
-                    if (nameObj == null) {
-                        return false;
-                    }
-                    String name = nameObj.toString();
-
-                    //Description
-                    Object descObj = modData.get("description", modData);
-                    if (!( descObj instanceof Scriptable )) {
-                        return false;
-                    }
-                    Scriptable descS = (Scriptable) descObj;
-                    Description desc = loadDescription(descS);
-
-                    //Parts
-
-                    return null;
-                }
-
-            });
+            scope.put("defineMod", scope, functionDefineMod);
 
             //Evaluate
             cx.evaluateString(scope, js, "<mod>", 1, null);
@@ -139,16 +106,6 @@ public class JSModLoader implements ModLoader {
             MLogger.log(Level.FINE, "The field \'author\' in a mod was not a String.", ex);
         }
 
-        List<String> authors = new ArrayList<String>();
-        try {
-            authors = (List<String>) data.get("authors");
-        }
-        catch (NullPointerException ex) {
-        }
-        catch (ClassCastException ex) {
-            MLogger.log(Level.FINE, "The field \'authors\' in a mod was not a String.", ex);
-        }
-
         String url = "Unspecified";
         try {
             url = (String) data.get("url");
@@ -159,7 +116,7 @@ public class JSModLoader implements ModLoader {
             MLogger.log(Level.FINE, "The field \'url\' in a mod was not a String.", ex);
         }
 
-        return new Description(description, version, author, authors, url);
+        return new Description(description, version, author, url);
     }
 
 }

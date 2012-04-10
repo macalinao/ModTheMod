@@ -16,12 +16,6 @@
  */
 package com.modthemod.modthemod.mod;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Level;
-import com.modthemod.modthemod.MLogger;
-
 /**
  * Represents the description of a mod.
  */
@@ -33,15 +27,12 @@ public class Description {
 
     private final String author;
 
-    private final List<String> authors;
-
     private final String url;
 
-    public Description(String description, String version, String author, List<String> authors, String url) {
+    public Description(String description, String version, String author, String url) {
         this.description = description;
         this.version = version;
         this.author = author;
-        this.authors = authors;
         this.url = url;
     }
 
@@ -55,10 +46,6 @@ public class Description {
 
     public String getAuthor() {
         return author;
-    }
-
-    public List<String> getAuthors() {
-        return authors;
     }
 
     public String getUrl() {
