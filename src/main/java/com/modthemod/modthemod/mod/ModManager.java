@@ -14,15 +14,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package com.modthemod.modthemod.mod;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.thedevteam.modthemod.ModTheModCore;
-import org.thedevteam.modthemod.spout.MTMSpoutPlugin;
-import org.thedevteam.modthemod.mod.Mod;
+import com.modthemod.modthemod.ModTheModCore;
+import com.modthemod.modthemod.spout.MTMSpoutPlugin;
+import com.modthemod.modthemod.mod.Mod;
 
 /**
  * Manages our mods.

@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.part;
+package com.modthemod.modthemod.part;
 
-import org.thedevteam.modthemod.mod.Description;
-import org.thedevteam.modthemod.mod.ModLanguage;
+import com.modthemod.modthemod.mod.Description;
+import com.modthemod.modthemod.mod.ModLanguage;
 
 /**
  * Base class for PartTypes.

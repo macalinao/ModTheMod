@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package com.modthemod.modthemod.mod;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.thedevteam.modthemod.part.Part;
+import com.modthemod.modthemod.part.Part;
 
 /**
  * Represents a common mod.

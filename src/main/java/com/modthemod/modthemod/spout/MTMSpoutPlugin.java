@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.spout;
+package com.modthemod.modthemod.spout;
 
 import org.spout.api.plugin.CommonPlugin;
-import org.thedevteam.modthemod.MLogger;
-import static org.thedevteam.modthemod.MLogger.info;
-import org.thedevteam.modthemod.ModTheModCore;
-import org.thedevteam.modthemod.mod.ModManager;
+import com.modthemod.modthemod.MLogger;
+import static com.modthemod.modthemod.MLogger.info;
+import com.modthemod.modthemod.ModTheModCore;
+import com.modthemod.modthemod.mod.ModManager;
 
 /**
  * ModTheMod main plugin file.

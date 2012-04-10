@@ -14,15 +14,15 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod.js;
+package com.modthemod.modthemod.mod.js;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import org.mozilla.javascript.Scriptable;
-import org.thedevteam.modthemod.MLogger;
-import org.thedevteam.modthemod.mod.Description;
+import com.modthemod.modthemod.MLogger;
+import com.modthemod.modthemod.mod.Description;
 
 /**
  * Loads Javascript {@link Description} objects from their {@link Scriptable}

@@ -14,35 +14,11 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.part;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.modthemod.modthemod.mod;
 
 /**
- * Holds properties of a part.
+ * Represents types of mods.
  */
-public class PartProperties {
-
-    /**
-     * The properties of the part.
-     */
-    private Map<String, String> properties = new HashMap<String, String>();
-
-    /**
-     * Constructor.
-     */
-    public PartProperties() {
-    }
-
-    /**
-     * Adds a property to this {@link PartProperties} object.
-     *
-     * @param name The name of the property.
-     * @param value The value of the property.
-     */
-    public void addProperty(String name, String value) {
-        properties.put(name, value);
-    }
-
+public enum ModLanguage {
+    JAVASCRIPT;
 }

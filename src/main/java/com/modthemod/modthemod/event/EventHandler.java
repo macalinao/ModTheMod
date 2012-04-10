@@ -14,35 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.part;
+package com.modthemod.modthemod.event;
 
-import org.thedevteam.modthemod.mod.Description;
-import org.thedevteam.modthemod.mod.ModLanguage;
+import org.spout.api.event.Event;
 
 /**
- * Represents a type of {@link Part}.
+ * Interface for methods that handle events.
  */
-public interface PartType {
+public interface EventHandler<T extends Event> {
 
     /**
-     * Gets the language this {@link PartType} was written in.
+     * Handles the event.
      *
-     * @return The language this {@link PartType} was written in.
+     * @param event The event to handle.
      */
-    public ModLanguage getLanguage();
-
-    /**
-     * Gets the name of the part type.
-     *
-     * @return The name of the part type.
-     */
-    public String getName();
-
-    /**
-     * Gets the description of the part type.
-     *
-     * @return The description of the part type.
-     */
-    public Description getDescription();
+    public void handle(T event);
 
 }

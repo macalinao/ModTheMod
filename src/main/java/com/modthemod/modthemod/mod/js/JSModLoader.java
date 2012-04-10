@@ -14,16 +14,16 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod.js;
+package com.modthemod.modthemod.mod.js;
 
 import com.google.common.base.Charsets;
 import org.mozilla.javascript.Callable;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
-import org.thedevteam.modthemod.mod.Mod;
-import org.thedevteam.modthemod.mod.ModLoader;
-import org.thedevteam.modthemod.mod.ModLanguage;
+import com.modthemod.modthemod.mod.Mod;
+import com.modthemod.modthemod.mod.ModLoader;
+import com.modthemod.modthemod.mod.ModLanguage;
 
 /**
  * Represents a Javascript mod loader.

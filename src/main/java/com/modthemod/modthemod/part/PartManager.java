@@ -14,39 +14,33 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.part;
+package com.modthemod.modthemod.part;
+
+import java.util.HashMap;
+import java.util.Map;
+import com.modthemod.modthemod.spout.MTMSpoutPlugin;
 
 /**
- * Represents a part.
+ * Manages parts.
  */
-public interface Part {
+public class PartManager {
+
+    private final MTMSpoutPlugin plugin;
+
+    private Map<String, PartType> partTypes = new HashMap<String, PartType>();
+
+    public PartManager(MTMSpoutPlugin plugin) {
+        this.plugin = plugin;
+    }
 
     /**
-     * Gets the id of the part.
+     * Gets a PartType from its id.
      *
-     * @return The id of the part.
+     * @param id The id of the {@link PartType}.
+     * @return The {@link PartType}.
      */
-    public String getId();
-
-    /**
-     * Gets the type of the part.
-     *
-     * @return The type of the part.
-     */
-    public PartType getType();
-
-    /**
-     * Gets the properties of the part.
-     *
-     * @return The properties of the part.
-     */
-    public PartProperties getProperties();
-
-    /**
-     * Gets the handlers of the part.
-     *
-     * @return The handlers of the part.
-     */
-    public PartHandlers getHandlers();
+    public PartType getType(String id) {
+        return partTypes.get(id.toLowerCase().replace(' ', '-'));
+    }
 
 }

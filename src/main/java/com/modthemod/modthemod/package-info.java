@@ -5,4 +5,4 @@
  * of the modding framework.
  * </p>
  */
-package org.thedevteam.modthemod;
+package com.modthemod.modthemod;

@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
+package com.modthemod.modthemod;
 
-import org.thedevteam.modthemod.mod.ModManager;
+import com.modthemod.modthemod.mod.ModManager;
 
 /**
  * ModTheMod API.

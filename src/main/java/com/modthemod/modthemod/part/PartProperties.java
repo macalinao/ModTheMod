@@ -14,21 +14,35 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod.js;
+package com.modthemod.modthemod.part;
 
+import java.util.HashMap;
 import java.util.Map;
-import org.thedevteam.modthemod.mod.CommonMod;
-import org.thedevteam.modthemod.mod.Description;
-import org.thedevteam.modthemod.mod.ModLanguage;
-import org.thedevteam.modthemod.part.Part;
 
 /**
- * Represents a mod made in Javascript.
+ * Holds properties of a part.
  */
-public final class JSMod extends CommonMod {
+public class PartProperties {
 
-    JSMod(String name, Description description, Map<String, Part> parts) {
-        super(ModLanguage.JAVASCRIPT, name, description, parts);
+    /**
+     * The properties of the part.
+     */
+    private Map<String, String> properties = new HashMap<String, String>();
+
+    /**
+     * Constructor.
+     */
+    public PartProperties() {
+    }
+
+    /**
+     * Adds a property to this {@link PartProperties} object.
+     *
+     * @param name The name of the property.
+     * @param value The value of the property.
+     */
+    public void addProperty(String name, String value) {
+        properties.put(name, value);
     }
 
 }

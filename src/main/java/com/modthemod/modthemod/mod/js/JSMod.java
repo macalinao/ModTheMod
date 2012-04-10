@@ -14,35 +14,21 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod;
+package com.modthemod.modthemod.mod.js;
 
-import org.thedevteam.modthemod.mod.ModManager;
+import java.util.Map;
+import com.modthemod.modthemod.mod.CommonMod;
+import com.modthemod.modthemod.mod.Description;
+import com.modthemod.modthemod.mod.ModLanguage;
+import com.modthemod.modthemod.part.Part;
 
 /**
- * The core for ModTheMod.
+ * Represents a mod made in Javascript.
  */
-public class ModTheModCore {
+public final class JSMod extends CommonMod {
 
-    /**
-     * The {@link ModManager}.
-     */
-    private ModManager modManager;
-
-    /**
-     * Gets the {@link ModManager}.
-     *
-     * @return The {@link ModManager}.
-     */
-    public ModManager getModManager() {
-        return this.modManager;
-    }
-
-    /**
-     * Initializes the core.
-     */
-    public void initialize() {
-        MLogger.info("== Loading the Mod Manager... ==");
-        modManager = new ModManager(this);
+    JSMod(String name, Description description, Map<String, Part> parts) {
+        super(ModLanguage.JAVASCRIPT, name, description, parts);
     }
 
 }

@@ -14,11 +14,24 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package com.modthemod.modthemod.mod;
 
 /**
- * Represents types of mods.
+ * Interface for loading mods.
  */
-public enum ModLanguage {
-    JAVASCRIPT;
+public interface ModLoader {
+    /**
+     * Loads a mod from the given data.
+     *
+     * @param data The data to load from.
+     * @return The loaded mod.
+     */
+    public Mod loadMod(byte[] data);
+
+    /**
+     * Gets the type of ModLoader this is.
+     * 
+     * @return The type of ModLoader.
+     */
+    public ModLanguage getType();
 }

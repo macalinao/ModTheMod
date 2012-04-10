@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package com.modthemod.modthemod.mod;
 
 import java.util.Map;
 import org.spout.api.Source;
 import org.spout.api.util.Named;
-import org.thedevteam.modthemod.part.Part;
+import com.modthemod.modthemod.part.Part;
 
 /**
  * Represents a Mod.

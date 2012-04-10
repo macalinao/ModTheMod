@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package com.modthemod.modthemod.mod;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
-import org.thedevteam.modthemod.MLogger;
+import com.modthemod.modthemod.MLogger;
 
 /**
  * Represents the description of a mod.

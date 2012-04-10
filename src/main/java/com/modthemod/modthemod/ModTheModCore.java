@@ -14,24 +14,35 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with ModTheMod.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.thedevteam.modthemod.mod;
+package com.modthemod.modthemod;
+
+import com.modthemod.modthemod.mod.ModManager;
 
 /**
- * Interface for loading mods.
+ * The core for ModTheMod.
  */
-public interface ModLoader {
-    /**
-     * Loads a mod from the given data.
-     *
-     * @param data The data to load from.
-     * @return The loaded mod.
-     */
-    public Mod loadMod(byte[] data);
+public class ModTheModCore {
 
     /**
-     * Gets the type of ModLoader this is.
-     * 
-     * @return The type of ModLoader.
+     * The {@link ModManager}.
      */
-    public ModLanguage getType();
+    private ModManager modManager;
+
+    /**
+     * Gets the {@link ModManager}.
+     *
+     * @return The {@link ModManager}.
+     */
+    public ModManager getModManager() {
+        return this.modManager;
+    }
+
+    /**
+     * Initializes the core.
+     */
+    public void initialize() {
+        MLogger.info("== Loading the Mod Manager... ==");
+        modManager = new ModManager(this);
+    }
+
 }
