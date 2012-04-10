@@ -311,7 +311,7 @@
                         <goals>
                             <goal>upload</goal>
                         </goals>
-                        <phase>install</phase>
+                        <phase>release</phase>
                     </execution>
                 </executions>
             </plugin>
