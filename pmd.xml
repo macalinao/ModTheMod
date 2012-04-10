@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2012-04-10T00:19:29.146">
+<file name="C:\Users\simplyianm\Desktop\p\THE\ModTheMod\src\main\java\org\thedevteam\modthemod\mod\Description.java">
+<violation beginline="19" endline="19" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statement Rules" package="org.thedevteam.modthemod.mod" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.ArrayList'
+</violation>
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="21" rule="UnusedImports" ruleset="Import Statement Rules" package="org.thedevteam.modthemod.mod" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Map'
+</violation>
+<violation beginline="22" endline="22" begincolumn="1" endcolumn="31" rule="UnusedImports" ruleset="Import Statement Rules" package="org.thedevteam.modthemod.mod" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.logging.Level'
+</violation>
+<violation beginline="23" endline="23" begincolumn="1" endcolumn="40" rule="UnusedImports" ruleset="Import Statement Rules" package="org.thedevteam.modthemod.mod" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.thedevteam.modthemod.MLogger'
+</violation>
+</file>
+<file name="C:\Users\simplyianm\Desktop\p\THE\ModTheMod\src\main\java\org\thedevteam\modthemod\mod\ModManager.java">
+<violation beginline="24" endline="24" begincolumn="1" endcolumn="40" rule="ImportFromSamePackage" ruleset="Import Statement Rules" package="org.thedevteam.modthemod.mod" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#ImportFromSamePackage" priority="3">
+No need to import a type that lives in the same package
+</violation>
+<violation beginline="31" endline="31" begincolumn="35" endcolumn="40" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.thedevteam.modthemod.mod" class="ModManager" variable="plugin" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'plugin'.
+</violation>
+</file>
+<file name="C:\Users\simplyianm\Desktop\p\THE\ModTheMod\src\main\java\org\thedevteam\modthemod\mod\js\JSDescriptionLoader.java">
+<violation beginline="49" endline="50" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.thedevteam.modthemod.mod.js" class="JSDescriptionLoader" method="load" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="57" endline="58" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.thedevteam.modthemod.mod.js" class="JSDescriptionLoader" method="load" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="65" endline="66" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.thedevteam.modthemod.mod.js" class="JSDescriptionLoader" method="load" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="73" endline="74" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.thedevteam.modthemod.mod.js" class="JSDescriptionLoader" method="load" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="81" endline="82" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="org.thedevteam.modthemod.mod.js" class="JSDescriptionLoader" method="load" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="C:\Users\simplyianm\Desktop\p\THE\ModTheMod\src\main\java\org\thedevteam\modthemod\mod\js\JSModLoader.java">
+<violation beginline="23" endline="23" begincolumn="1" endcolumn="47" rule="UnusedImports" ruleset="Import Statement Rules" package="org.thedevteam.modthemod.mod.js" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.mozilla.javascript.ScriptableObject'
+</violation>
+<violation beginline="61" endline="61" begincolumn="28" endcolumn="31" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.thedevteam.modthemod.mod.js" class="JSModLoader" method="call" variable="name" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'name'.
+</violation>
+<violation beginline="68" endline="68" begincolumn="32" endcolumn="35" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="org.thedevteam.modthemod.mod.js" class="JSModLoader" method="call" variable="desc" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'desc'.
+</violation>
+</file>
+<file name="C:\Users\simplyianm\Desktop\p\THE\ModTheMod\src\main\java\org\thedevteam\modthemod\part\PartManager.java">
+<violation beginline="28" endline="28" begincolumn="35" endcolumn="40" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="org.thedevteam.modthemod.part" class="PartManager" variable="plugin" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'plugin'.
+</violation>
+</file>
+</pmd>
