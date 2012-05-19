@@ -18,6 +18,7 @@
         <project.blurb>Enhanced and Simplified Minecraft Modding</project.blurb>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <powermock.version>1.4.11</powermock.version>
+        <github.global.server>github</github.global.server>
     </properties>
     
     <!-- License -->
@@ -295,13 +296,13 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>github-maven-core</artifactId>
-                <version>0.4-SNAPSHOT</version>
+                <version>0.4</version>
             </plugin>
             <!-- Github downloads -->
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>downloads-maven-plugin</artifactId>
-                <version>0.4</version>
+                <version>0.5</version>
                 <configuration>
                     <description>Version ${project.version} of ${project.name}</description>
                     <override>true</override>
@@ -320,7 +321,7 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.5</version>
+                <version>0.6</version>
                 <configuration>
                     <message>Committing site of ${project.version}.</message>
                 </configuration>      
