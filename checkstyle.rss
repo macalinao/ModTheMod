@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 19,
-             Errors: 177,
+      <title>File: 4,
+             Errors: 115,
              Warnings: 0,
              Infos: 0
       </title>
@@ -29,77 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.event.EventHandler.java">org/thedevteam/modthemod/event/EventHandler.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.ModTheModPlugin.java">org/thedevteam/modthemod/ModTheModPlugin.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.part.PartManager.java">org/thedevteam/modthemod/part/PartManager.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  7
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.js.JSDescriptionLoader.java">org/thedevteam/modthemod/mod/js/JSDescriptionLoader.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  14
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.part.CommonPartType.java">org/thedevteam/modthemod/part/CommonPartType.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  16
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.js.JSModLoader.java">org/thedevteam/modthemod/mod/js/JSModLoader.java</a>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.modthemod.entity.MEntityManager.java">com/modthemod/modthemod/entity/MEntityManager.java</a>
                 </td>
                 <td>
                   0
@@ -113,7 +43,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.MLogger.java">org/thedevteam/modthemod/MLogger.java</a>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.modthemod.property.MTypeManager.java">com/modthemod/modthemod/property/MTypeManager.java</a>
                 </td>
                 <td>
                   0
@@ -122,12 +52,12 @@
                   0
                 </td>
                 <td>
-                  25
+                  35
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.Mod.java">org/thedevteam/modthemod/mod/Mod.java</a>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.modthemod.event.MEventManager.java">com/modthemod/modthemod/event/MEventManager.java</a>
                 </td>
                 <td>
                   0
@@ -136,12 +66,12 @@
                   0
                 </td>
                 <td>
-                  4
+                  23
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.part.PartType.java">org/thedevteam/modthemod/part/PartType.java</a>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.modthemod.MGame.java">com/modthemod/modthemod/MGame.java</a>
                 </td>
                 <td>
                   0
@@ -150,147 +80,7 @@
                   0
                 </td>
                 <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.ModManager.java">org/thedevteam/modthemod/mod/ModManager.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  10
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.CommonMod.java">org/thedevteam/modthemod/mod/CommonMod.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  19
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.part.Part.java">org/thedevteam/modthemod/part/Part.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.js.JSMod.java">org/thedevteam/modthemod/mod/js/JSMod.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.ModLanguage.java">org/thedevteam/modthemod/mod/ModLanguage.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.part.PartProperties.java">org/thedevteam/modthemod/part/PartProperties.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.ModLoader.java">org/thedevteam/modthemod/mod/ModLoader.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.part.PartHandlers.java">org/thedevteam/modthemod/part/PartHandlers.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.ModTheMod.java">org/thedevteam/modthemod/ModTheMod.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  7
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://thedevteam.org/checkstyle.html#org.thedevteam.modthemod.mod.Description.java">org/thedevteam/modthemod/mod/Description.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  31
+                  40
                 </td>
               </tr>
                       </tbody>

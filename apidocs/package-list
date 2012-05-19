@@ -1,5 +1,4 @@
-org.thedevteam.modthemod
-org.thedevteam.modthemod.event
-org.thedevteam.modthemod.mod
-org.thedevteam.modthemod.mod.js
-org.thedevteam.modthemod.part
+com.modthemod.modthemod
+com.modthemod.modthemod.entity
+com.modthemod.modthemod.event
+com.modthemod.modthemod.property
