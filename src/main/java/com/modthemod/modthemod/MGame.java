@@ -53,8 +53,7 @@ public class MGame implements Game {
 
 	@Override
 	public Logger getLogger() {
-		// TODO Auto-generated method stub
-		return null;
+		return platform.getLogger();
 	}
 
 }
