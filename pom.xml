@@ -86,10 +86,10 @@
     <!-- Dependencies -->
     <dependencies>
         <!-- Compile -->
-        <!-- Spout -->
+        <!-- ModTheModAPI -->
         <dependency>
-            <groupId>org.spout</groupId>
-            <artifactId>spoutapi</artifactId>
+            <groupId>com.modthemod</groupId>
+            <artifactId>modthemodapi</artifactId>
             <version>dev-SNAPSHOT</version>
             <scope>compile</scope>
             <type>jar</type>
@@ -225,6 +225,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>rhino:js</include>
+                                    <include>com.modthemod:api</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
