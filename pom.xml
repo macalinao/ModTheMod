@@ -72,6 +72,10 @@
             <id>spout-repo</id>
             <url>http://repo.spout.org</url>
         </repository>
+        <repository>
+            <id>test-voxton-repo</id>
+            <url>http://test.voxton.net/mvn/repository/</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
