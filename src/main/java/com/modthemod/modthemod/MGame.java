@@ -1,5 +1,7 @@
 package com.modthemod.modthemod;
 
+import java.util.logging.Logger;
+
 import com.modthemod.api.Game;
 import com.modthemod.api.platform.Platform;
 import com.modthemod.modthemod.entity.MEntityManager;
@@ -47,6 +49,12 @@ public class MGame implements Game {
 	@Override
 	public MTypeManager getTypeManager() {
 		return typeManager;
+	}
+
+	@Override
+	public Logger getLogger() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
