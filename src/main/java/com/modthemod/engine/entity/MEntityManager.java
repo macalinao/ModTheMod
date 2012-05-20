@@ -1,9 +1,9 @@
-package com.modthemod.modthemod.entity;
+package com.modthemod.engine.entity;
 
 import com.modthemod.api.base.Base;
 import com.modthemod.api.entity.Entity;
 import com.modthemod.api.entity.EntityManager;
-import com.modthemod.modthemod.MGame;
+import com.modthemod.engine.MGame;
 
 /**
  * The entity manager.

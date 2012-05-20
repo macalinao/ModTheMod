@@ -1,12 +1,12 @@
-package com.modthemod.modthemod;
+package com.modthemod.engine;
 
 import java.util.logging.Logger;
 
 import com.modthemod.api.Game;
 import com.modthemod.api.platform.Platform;
-import com.modthemod.modthemod.entity.MEntityManager;
-import com.modthemod.modthemod.event.MEventManager;
-import com.modthemod.modthemod.property.MTypeManager;
+import com.modthemod.engine.entity.MEntityManager;
+import com.modthemod.engine.event.MEventManager;
+import com.modthemod.engine.property.MTypeManager;
 
 /**
  * Represents the game.

@@ -1,4 +1,4 @@
-package com.modthemod.modthemod.property;
+package com.modthemod.engine.property;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import com.modthemod.api.property.Matcher;
 import com.modthemod.api.property.Primitive;
 import com.modthemod.api.property.Type;
 import com.modthemod.api.property.TypeManager;
-import com.modthemod.modthemod.MGame;
+import com.modthemod.engine.MGame;
 
 public class MTypeManager implements TypeManager {
 	private static final Pattern basePattern = Pattern

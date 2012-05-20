@@ -1,4 +1,4 @@
-package com.modthemod.modthemod.event;
+package com.modthemod.engine.event;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import com.modthemod.api.event.EventManager;
 import com.modthemod.api.event.EventType;
 import com.modthemod.api.mod.Mod;
-import com.modthemod.modthemod.MGame;
+import com.modthemod.engine.MGame;
 
 public class MEventManager implements EventManager {
 	private final MGame game;
