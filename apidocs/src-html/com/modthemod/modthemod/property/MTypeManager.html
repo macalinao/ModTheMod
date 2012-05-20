@@ -3,46 +3,80 @@
 <PRE>
 <FONT color="green">001</FONT>    package com.modthemod.modthemod.property;<a name="line.1"></a>
 <FONT color="green">002</FONT>    <a name="line.2"></a>
-<FONT color="green">003</FONT>    import com.modthemod.api.base.Base;<a name="line.3"></a>
-<FONT color="green">004</FONT>    import com.modthemod.api.mod.Mod;<a name="line.4"></a>
-<FONT color="green">005</FONT>    import com.modthemod.api.property.Matcher;<a name="line.5"></a>
-<FONT color="green">006</FONT>    import com.modthemod.api.property.Primitive;<a name="line.6"></a>
-<FONT color="green">007</FONT>    import com.modthemod.api.property.Type;<a name="line.7"></a>
-<FONT color="green">008</FONT>    import com.modthemod.api.property.TypeManager;<a name="line.8"></a>
-<FONT color="green">009</FONT>    import com.modthemod.modthemod.MGame;<a name="line.9"></a>
-<FONT color="green">010</FONT>    <a name="line.10"></a>
-<FONT color="green">011</FONT>    public class MTypeManager implements TypeManager {<a name="line.11"></a>
-<FONT color="green">012</FONT>            private final MGame game;<a name="line.12"></a>
-<FONT color="green">013</FONT>    <a name="line.13"></a>
-<FONT color="green">014</FONT>            public MTypeManager(MGame game) {<a name="line.14"></a>
-<FONT color="green">015</FONT>                    this.game = game;<a name="line.15"></a>
-<FONT color="green">016</FONT>            }<a name="line.16"></a>
-<FONT color="green">017</FONT>    <a name="line.17"></a>
-<FONT color="green">018</FONT>            @Override<a name="line.18"></a>
-<FONT color="green">019</FONT>            public Matcher getMatcher(String name) {<a name="line.19"></a>
-<FONT color="green">020</FONT>                    // TODO Auto-generated method stub<a name="line.20"></a>
-<FONT color="green">021</FONT>                    return null;<a name="line.21"></a>
-<FONT color="green">022</FONT>            }<a name="line.22"></a>
-<FONT color="green">023</FONT>    <a name="line.23"></a>
-<FONT color="green">024</FONT>            @Override<a name="line.24"></a>
-<FONT color="green">025</FONT>            public Type&lt;?&gt; getType(String name) {<a name="line.25"></a>
-<FONT color="green">026</FONT>                    // TODO Auto-generated method stub<a name="line.26"></a>
-<FONT color="green">027</FONT>                    return null;<a name="line.27"></a>
-<FONT color="green">028</FONT>            }<a name="line.28"></a>
-<FONT color="green">029</FONT>    <a name="line.29"></a>
-<FONT color="green">030</FONT>            @Override<a name="line.30"></a>
-<FONT color="green">031</FONT>            public void registerPrimitive(Primitive&lt;?&gt; primitive) {<a name="line.31"></a>
-<FONT color="green">032</FONT>                    // TODO Auto-generated method stub<a name="line.32"></a>
-<FONT color="green">033</FONT>    <a name="line.33"></a>
-<FONT color="green">034</FONT>            }<a name="line.34"></a>
-<FONT color="green">035</FONT>    <a name="line.35"></a>
-<FONT color="green">036</FONT>            @Override<a name="line.36"></a>
-<FONT color="green">037</FONT>            public void registerBase(Base base, Mod mod) {<a name="line.37"></a>
-<FONT color="green">038</FONT>                    // TODO Auto-generated method stub<a name="line.38"></a>
-<FONT color="green">039</FONT>    <a name="line.39"></a>
-<FONT color="green">040</FONT>            }<a name="line.40"></a>
-<FONT color="green">041</FONT>    <a name="line.41"></a>
-<FONT color="green">042</FONT>    }<a name="line.42"></a>
+<FONT color="green">003</FONT>    import java.util.HashMap;<a name="line.3"></a>
+<FONT color="green">004</FONT>    import java.util.Map;<a name="line.4"></a>
+<FONT color="green">005</FONT>    import java.util.logging.Level;<a name="line.5"></a>
+<FONT color="green">006</FONT>    <a name="line.6"></a>
+<FONT color="green">007</FONT>    import com.modthemod.api.base.Base;<a name="line.7"></a>
+<FONT color="green">008</FONT>    import com.modthemod.api.event.EventType;<a name="line.8"></a>
+<FONT color="green">009</FONT>    import com.modthemod.api.mod.Mod;<a name="line.9"></a>
+<FONT color="green">010</FONT>    import com.modthemod.api.property.Matcher;<a name="line.10"></a>
+<FONT color="green">011</FONT>    import com.modthemod.api.property.Primitive;<a name="line.11"></a>
+<FONT color="green">012</FONT>    import com.modthemod.api.property.Type;<a name="line.12"></a>
+<FONT color="green">013</FONT>    import com.modthemod.api.property.TypeManager;<a name="line.13"></a>
+<FONT color="green">014</FONT>    import com.modthemod.modthemod.MGame;<a name="line.14"></a>
+<FONT color="green">015</FONT>    <a name="line.15"></a>
+<FONT color="green">016</FONT>    public class MTypeManager implements TypeManager {<a name="line.16"></a>
+<FONT color="green">017</FONT>            private final MGame game;<a name="line.17"></a>
+<FONT color="green">018</FONT>    <a name="line.18"></a>
+<FONT color="green">019</FONT>            private Map&lt;String, Primitive&lt;?&gt;&gt; primitives = new HashMap&lt;String, Primitive&lt;?&gt;&gt;();<a name="line.19"></a>
+<FONT color="green">020</FONT>    <a name="line.20"></a>
+<FONT color="green">021</FONT>            private Map&lt;Mod, Map&lt;String, Base&gt;&gt; bases = new HashMap&lt;Mod, Map&lt;String, Base&gt;&gt;();<a name="line.21"></a>
+<FONT color="green">022</FONT>    <a name="line.22"></a>
+<FONT color="green">023</FONT>            private Map&lt;String, Base&gt; baseNames = new HashMap&lt;String, Base&gt;();<a name="line.23"></a>
+<FONT color="green">024</FONT>    <a name="line.24"></a>
+<FONT color="green">025</FONT>            public MTypeManager(MGame game) {<a name="line.25"></a>
+<FONT color="green">026</FONT>                    this.game = game;<a name="line.26"></a>
+<FONT color="green">027</FONT>            }<a name="line.27"></a>
+<FONT color="green">028</FONT>    <a name="line.28"></a>
+<FONT color="green">029</FONT>            @Override<a name="line.29"></a>
+<FONT color="green">030</FONT>            public Matcher getMatcher(String name) {<a name="line.30"></a>
+<FONT color="green">031</FONT>                    // TODO Auto-generated method stub<a name="line.31"></a>
+<FONT color="green">032</FONT>                    return null;<a name="line.32"></a>
+<FONT color="green">033</FONT>            }<a name="line.33"></a>
+<FONT color="green">034</FONT>    <a name="line.34"></a>
+<FONT color="green">035</FONT>            @Override<a name="line.35"></a>
+<FONT color="green">036</FONT>            public Type&lt;?&gt; getType(String name) {<a name="line.36"></a>
+<FONT color="green">037</FONT>                    // TODO Auto-generated method stub<a name="line.37"></a>
+<FONT color="green">038</FONT>                    return null;<a name="line.38"></a>
+<FONT color="green">039</FONT>            }<a name="line.39"></a>
+<FONT color="green">040</FONT>    <a name="line.40"></a>
+<FONT color="green">041</FONT>            @Override<a name="line.41"></a>
+<FONT color="green">042</FONT>            public void registerPrimitive(Primitive&lt;?&gt; primitive) {<a name="line.42"></a>
+<FONT color="green">043</FONT>                    primitives.put(primitive.getName(), primitive);<a name="line.43"></a>
+<FONT color="green">044</FONT>            }<a name="line.44"></a>
+<FONT color="green">045</FONT>    <a name="line.45"></a>
+<FONT color="green">046</FONT>            @Override<a name="line.46"></a>
+<FONT color="green">047</FONT>            public void registerBase(Base base, Mod mod) {<a name="line.47"></a>
+<FONT color="green">048</FONT>                    Map&lt;String, Base&gt; map = getBaseMap(mod);<a name="line.48"></a>
+<FONT color="green">049</FONT>                    Base exists = map.get(base.getName());<a name="line.49"></a>
+<FONT color="green">050</FONT>                    if (exists != null) {<a name="line.50"></a>
+<FONT color="green">051</FONT>                            game.getLogger().log(<a name="line.51"></a>
+<FONT color="green">052</FONT>                                            Level.WARNING,<a name="line.52"></a>
+<FONT color="green">053</FONT>                                            "Base '" + exists.getName()<a name="line.53"></a>
+<FONT color="green">054</FONT>                                                            + "' already exists! Be careful!");<a name="line.54"></a>
+<FONT color="green">055</FONT>                    }<a name="line.55"></a>
+<FONT color="green">056</FONT>                    map.put(base.getName(), base);<a name="line.56"></a>
+<FONT color="green">057</FONT>    <a name="line.57"></a>
+<FONT color="green">058</FONT>                    // Now the name<a name="line.58"></a>
+<FONT color="green">059</FONT>                    baseNames.put(mod.getName() + ":" + base.getName(), base);<a name="line.59"></a>
+<FONT color="green">060</FONT>            }<a name="line.60"></a>
+<FONT color="green">061</FONT>    <a name="line.61"></a>
+<FONT color="green">062</FONT>            /**<a name="line.62"></a>
+<FONT color="green">063</FONT>             * Gets the map of bases of the given mod.<a name="line.63"></a>
+<FONT color="green">064</FONT>             * <a name="line.64"></a>
+<FONT color="green">065</FONT>             * @param mod<a name="line.65"></a>
+<FONT color="green">066</FONT>             * @return<a name="line.66"></a>
+<FONT color="green">067</FONT>             */<a name="line.67"></a>
+<FONT color="green">068</FONT>            private Map&lt;String, Base&gt; getBaseMap(Mod mod) {<a name="line.68"></a>
+<FONT color="green">069</FONT>                    Map&lt;String, Base&gt; map = bases.get(mod);<a name="line.69"></a>
+<FONT color="green">070</FONT>                    if (map == null) {<a name="line.70"></a>
+<FONT color="green">071</FONT>                            map = new HashMap&lt;String, Base&gt;();<a name="line.71"></a>
+<FONT color="green">072</FONT>                            bases.put(mod, map);<a name="line.72"></a>
+<FONT color="green">073</FONT>                    }<a name="line.73"></a>
+<FONT color="green">074</FONT>                    return map;<a name="line.74"></a>
+<FONT color="green">075</FONT>            }<a name="line.75"></a>
+<FONT color="green">076</FONT>    }<a name="line.76"></a>
 
 
 
