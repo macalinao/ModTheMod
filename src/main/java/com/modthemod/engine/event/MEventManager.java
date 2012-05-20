@@ -21,8 +21,8 @@ public class MEventManager implements EventManager {
 	}
 
 	@Override
-	public void registerEvent(EventType type, Mod mod) {
-		Map<String, EventType> map = getEventMap(mod);
+	public void registerEvent(EventType type) {
+		Map<String, EventType> map = getEventMap(type.getMod());
 		EventType now = map.get(type.getName());
 		if (now != null) {
 			game.getLogger().log(
@@ -33,7 +33,8 @@ public class MEventManager implements EventManager {
 		map.put(type.getName(), type);
 
 		// Now the name
-		eventTypeNames.put(mod.getName() + ":" + type.getName(), type);
+		eventTypeNames
+				.put(type.getMod().getName() + ":" + type.getName(), type);
 	}
 
 	@Override
