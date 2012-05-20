@@ -8,11 +8,18 @@ import java.util.Map;
 import com.modthemod.api.mod.Mod;
 import com.modthemod.api.mod.ModLoader;
 import com.modthemod.api.mod.ModManager;
+import com.modthemod.engine.MGame;
 
-public class MModManager implements ModManager {
-	private List<ModLoader> loaders = new ArrayList<ModLoader>();
+public final class MModManager implements ModManager {
+	private final MGame game;
 
-	private Map<String, Mod> mods = new HashMap<String, Mod>();
+	private final List<ModLoader> loaders = new ArrayList<ModLoader>();
+
+	private final Map<String, Mod> mods = new HashMap<String, Mod>();
+
+	public MModManager(MGame game) {
+		this.game = game;
+	}
 
 	@Override
 	public Mod getMod(String name) {

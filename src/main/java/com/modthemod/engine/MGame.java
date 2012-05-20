@@ -3,9 +3,11 @@ package com.modthemod.engine;
 import java.util.logging.Logger;
 
 import com.modthemod.api.Game;
+import com.modthemod.api.mod.ModManager;
 import com.modthemod.api.platform.Platform;
 import com.modthemod.engine.entity.MEntityManager;
 import com.modthemod.engine.event.MEventManager;
+import com.modthemod.engine.mod.MModManager;
 import com.modthemod.engine.property.MTypeManager;
 
 /**
@@ -21,6 +23,8 @@ public class MGame implements Game {
 
 	private final MEventManager eventManager;
 
+	private final MModManager modManager;
+
 	private final MTypeManager typeManager;
 
 	public MGame(Platform platform) {
@@ -28,6 +32,7 @@ public class MGame implements Game {
 
 		this.entityManager = new MEntityManager(this);
 		this.eventManager = new MEventManager(this);
+		this.modManager = new MModManager(this);
 		this.typeManager = new MTypeManager(this);
 	}
 
@@ -44,6 +49,11 @@ public class MGame implements Game {
 	@Override
 	public MEventManager getEventManager() {
 		return eventManager;
+	}
+
+	@Override
+	public ModManager getModManager() {
+		return modManager;
 	}
 
 	@Override
