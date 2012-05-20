@@ -44,8 +44,8 @@ public class MTypeManager implements TypeManager {
 	}
 
 	@Override
-	public void registerBase(Base base, Mod mod) {
-		Map<String, Base> map = getBaseMap(mod);
+	public void registerBase(Base base) {
+		Map<String, Base> map = getBaseMap(base.getMod());
 		Base exists = map.get(base.getName());
 		if (exists != null) {
 			game.getLogger().log(
@@ -56,7 +56,7 @@ public class MTypeManager implements TypeManager {
 		map.put(base.getName(), base);
 
 		// Now the name
-		baseNames.put(mod.getName() + ":" + base.getName(), base);
+		baseNames.put(base.getMod().getName() + ":" + base.getName(), base);
 	}
 
 	/**
