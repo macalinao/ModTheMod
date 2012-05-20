@@ -47,8 +47,8 @@
 <FONT color="green">044</FONT>            }<a name="line.44"></a>
 <FONT color="green">045</FONT>    <a name="line.45"></a>
 <FONT color="green">046</FONT>            @Override<a name="line.46"></a>
-<FONT color="green">047</FONT>            public void registerBase(Base base, Mod mod) {<a name="line.47"></a>
-<FONT color="green">048</FONT>                    Map&lt;String, Base&gt; map = getBaseMap(mod);<a name="line.48"></a>
+<FONT color="green">047</FONT>            public void registerBase(Base base) {<a name="line.47"></a>
+<FONT color="green">048</FONT>                    Map&lt;String, Base&gt; map = getBaseMap(base.getMod());<a name="line.48"></a>
 <FONT color="green">049</FONT>                    Base exists = map.get(base.getName());<a name="line.49"></a>
 <FONT color="green">050</FONT>                    if (exists != null) {<a name="line.50"></a>
 <FONT color="green">051</FONT>                            game.getLogger().log(<a name="line.51"></a>
@@ -59,7 +59,7 @@
 <FONT color="green">056</FONT>                    map.put(base.getName(), base);<a name="line.56"></a>
 <FONT color="green">057</FONT>    <a name="line.57"></a>
 <FONT color="green">058</FONT>                    // Now the name<a name="line.58"></a>
-<FONT color="green">059</FONT>                    baseNames.put(mod.getName() + ":" + base.getName(), base);<a name="line.59"></a>
+<FONT color="green">059</FONT>                    baseNames.put(base.getMod().getName() + ":" + base.getName(), base);<a name="line.59"></a>
 <FONT color="green">060</FONT>            }<a name="line.60"></a>
 <FONT color="green">061</FONT>    <a name="line.61"></a>
 <FONT color="green">062</FONT>            /**<a name="line.62"></a>
