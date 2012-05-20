@@ -1,5 +1,7 @@
 package com.modthemod.engine;
 
+import static com.modthemod.engine.MLogger.info;
+
 import java.util.logging.Logger;
 
 import com.modthemod.api.Game;
@@ -34,6 +36,14 @@ public class MGame implements Game {
 		this.eventManager = new MEventManager(this);
 		this.modManager = new MModManager(this);
 		this.typeManager = new MTypeManager(this);
+
+		load();
+	}
+
+	private void load() {
+		info("======== LOADING... ========");
+		// TODO cool stuff, like loading the mods
+		info("=== MOD THE MOD LOADED ! ===");
 	}
 
 	@Override
