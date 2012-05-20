@@ -3,9 +3,9 @@ package com.modthemod.modthemod.property;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
+import java.util.regex.Pattern;
 
 import com.modthemod.api.base.Base;
-import com.modthemod.api.event.EventType;
 import com.modthemod.api.mod.Mod;
 import com.modthemod.api.property.Matcher;
 import com.modthemod.api.property.Primitive;
@@ -14,6 +14,9 @@ import com.modthemod.api.property.TypeManager;
 import com.modthemod.modthemod.MGame;
 
 public class MTypeManager implements TypeManager {
+	private static final Pattern basePattern = Pattern
+			.compile("\\(([a-z,]+)\\)");
+
 	private final MGame game;
 
 	private Map<String, Primitive<?>> primitives = new HashMap<String, Primitive<?>>();
@@ -34,8 +37,11 @@ public class MTypeManager implements TypeManager {
 
 	@Override
 	public Type<?> getType(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		String baseName = basePattern.matcher(name).group();
+		if (!baseName.isEmpty() && baseName != null && name.matches("[a-z]+")) {
+			return baseNames.get(baseName);
+		}
+		return primitives.get(name);
 	}
 
 	@Override
