@@ -16,9 +16,10 @@ public class MEntityManager implements EntityManager {
 	}
 
 	@Override
-	public Entity instantiateEntity(Base base, Object... args) {
-		// TODO
-		return null;
+	public SimpleEntity instantiateEntity(Base base, Object... args) {
+		SimpleEntity entity = new SimpleEntity(base);
+		base.getInstantiator().instantiate(args);
+		return entity;
 	}
 
 }
