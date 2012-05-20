@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 5,
-             Errors: 226,
+      <title>File: 6,
+             Errors: 249,
              Warnings: 0,
              Infos: 0
       </title>
@@ -39,6 +39,20 @@
                 </td>
                 <td>
                   19
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.engine.mod.MModManager.java">com/modthemod/engine/mod/MModManager.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  23
                 </td>
               </tr>
                           <tr>

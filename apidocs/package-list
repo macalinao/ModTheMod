@@ -1,4 +1,5 @@
 com.modthemod.engine
 com.modthemod.engine.entity
 com.modthemod.engine.event
+com.modthemod.engine.mod
 com.modthemod.engine.property
