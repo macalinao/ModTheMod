@@ -24,8 +24,8 @@
 <FONT color="green">021</FONT>            }<a name="line.21"></a>
 <FONT color="green">022</FONT>    <a name="line.22"></a>
 <FONT color="green">023</FONT>            @Override<a name="line.23"></a>
-<FONT color="green">024</FONT>            public void registerEvent(EventType type, Mod mod) {<a name="line.24"></a>
-<FONT color="green">025</FONT>                    Map&lt;String, EventType&gt; map = getEventMap(mod);<a name="line.25"></a>
+<FONT color="green">024</FONT>            public void registerEvent(EventType type) {<a name="line.24"></a>
+<FONT color="green">025</FONT>                    Map&lt;String, EventType&gt; map = getEventMap(type.getMod());<a name="line.25"></a>
 <FONT color="green">026</FONT>                    EventType now = map.get(type.getName());<a name="line.26"></a>
 <FONT color="green">027</FONT>                    if (now != null) {<a name="line.27"></a>
 <FONT color="green">028</FONT>                            game.getLogger().log(<a name="line.28"></a>
@@ -36,30 +36,31 @@
 <FONT color="green">033</FONT>                    map.put(type.getName(), type);<a name="line.33"></a>
 <FONT color="green">034</FONT>    <a name="line.34"></a>
 <FONT color="green">035</FONT>                    // Now the name<a name="line.35"></a>
-<FONT color="green">036</FONT>                    eventTypeNames.put(mod.getName() + ":" + type.getName(), type);<a name="line.36"></a>
-<FONT color="green">037</FONT>            }<a name="line.37"></a>
-<FONT color="green">038</FONT>    <a name="line.38"></a>
-<FONT color="green">039</FONT>            @Override<a name="line.39"></a>
-<FONT color="green">040</FONT>            public EventType getEvent(String name) {<a name="line.40"></a>
-<FONT color="green">041</FONT>                    return eventTypeNames.get(name.toLowerCase());<a name="line.41"></a>
-<FONT color="green">042</FONT>            }<a name="line.42"></a>
-<FONT color="green">043</FONT>    <a name="line.43"></a>
-<FONT color="green">044</FONT>            /**<a name="line.44"></a>
-<FONT color="green">045</FONT>             * Gets the EventType map for the given mod.<a name="line.45"></a>
-<FONT color="green">046</FONT>             * <a name="line.46"></a>
-<FONT color="green">047</FONT>             * @param mod<a name="line.47"></a>
-<FONT color="green">048</FONT>             * @return<a name="line.48"></a>
-<FONT color="green">049</FONT>             */<a name="line.49"></a>
-<FONT color="green">050</FONT>            private Map&lt;String, EventType&gt; getEventMap(Mod mod) {<a name="line.50"></a>
-<FONT color="green">051</FONT>                    Map&lt;String, EventType&gt; map = eventTypes.get(mod);<a name="line.51"></a>
-<FONT color="green">052</FONT>                    if (map == null) {<a name="line.52"></a>
-<FONT color="green">053</FONT>                            map = new HashMap&lt;String, EventType&gt;();<a name="line.53"></a>
-<FONT color="green">054</FONT>                            eventTypes.put(mod, map);<a name="line.54"></a>
-<FONT color="green">055</FONT>                    }<a name="line.55"></a>
-<FONT color="green">056</FONT>                    return map;<a name="line.56"></a>
-<FONT color="green">057</FONT>            }<a name="line.57"></a>
-<FONT color="green">058</FONT>    <a name="line.58"></a>
-<FONT color="green">059</FONT>    }<a name="line.59"></a>
+<FONT color="green">036</FONT>                    eventTypeNames<a name="line.36"></a>
+<FONT color="green">037</FONT>                                    .put(type.getMod().getName() + ":" + type.getName(), type);<a name="line.37"></a>
+<FONT color="green">038</FONT>            }<a name="line.38"></a>
+<FONT color="green">039</FONT>    <a name="line.39"></a>
+<FONT color="green">040</FONT>            @Override<a name="line.40"></a>
+<FONT color="green">041</FONT>            public EventType getEvent(String name) {<a name="line.41"></a>
+<FONT color="green">042</FONT>                    return eventTypeNames.get(name.toLowerCase());<a name="line.42"></a>
+<FONT color="green">043</FONT>            }<a name="line.43"></a>
+<FONT color="green">044</FONT>    <a name="line.44"></a>
+<FONT color="green">045</FONT>            /**<a name="line.45"></a>
+<FONT color="green">046</FONT>             * Gets the EventType map for the given mod.<a name="line.46"></a>
+<FONT color="green">047</FONT>             * <a name="line.47"></a>
+<FONT color="green">048</FONT>             * @param mod<a name="line.48"></a>
+<FONT color="green">049</FONT>             * @return<a name="line.49"></a>
+<FONT color="green">050</FONT>             */<a name="line.50"></a>
+<FONT color="green">051</FONT>            private Map&lt;String, EventType&gt; getEventMap(Mod mod) {<a name="line.51"></a>
+<FONT color="green">052</FONT>                    Map&lt;String, EventType&gt; map = eventTypes.get(mod);<a name="line.52"></a>
+<FONT color="green">053</FONT>                    if (map == null) {<a name="line.53"></a>
+<FONT color="green">054</FONT>                            map = new HashMap&lt;String, EventType&gt;();<a name="line.54"></a>
+<FONT color="green">055</FONT>                            eventTypes.put(mod, map);<a name="line.55"></a>
+<FONT color="green">056</FONT>                    }<a name="line.56"></a>
+<FONT color="green">057</FONT>                    return map;<a name="line.57"></a>
+<FONT color="green">058</FONT>            }<a name="line.58"></a>
+<FONT color="green">059</FONT>    <a name="line.59"></a>
+<FONT color="green">060</FONT>    }<a name="line.60"></a>
 
 
 
