@@ -22,7 +22,7 @@ public final class MModManager implements ModManager {
 
 	private final Set<ModLoader<?>> loaders = new HashSet<ModLoader<?>>();
 
-	private final Map<String, Mod<?>> mods = new HashMap<String, Mod<?>>();
+	private final Map<String, Mod> mods = new HashMap<String, Mod>();
 
 	private final Map<Pattern, ModLoader<?>> filters = new HashMap<Pattern, ModLoader<?>>();
 
@@ -31,13 +31,13 @@ public final class MModManager implements ModManager {
 	}
 
 	@Override
-	public Mod<?> getMod(String name) {
+	public Mod getMod(String name) {
 		return mods.get(name.toLowerCase());
 	}
 
 	@Override
-	public Set<Mod<?>> getMods() {
-		return new HashSet<Mod<?>>(mods.values());
+	public Set<Mod> getMods() {
+		return new HashSet<Mod>(mods.values());
 	}
 
 	@Override
@@ -48,9 +48,10 @@ public final class MModManager implements ModManager {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends Mod<T>> void enableMod(Mod<T> mod) {
-		ModLoader<T> loader = mod.getModLoader();
+	public <T extends Mod> void enableMod(T mod) {
+		ModLoader<T> loader = (ModLoader<T>) mod.getModLoader();
 		try {
 			loader.enableMod(mod);
 		} catch (Throwable ex) {
@@ -60,9 +61,10 @@ public final class MModManager implements ModManager {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public <T extends Mod<T>> void disableMod(Mod<T> mod) {
-		ModLoader<T> loader = mod.getModLoader();
+	public <T extends Mod> void disableMod(T mod) {
+		ModLoader<T> loader = (ModLoader<T>) mod.getModLoader();
 		try {
 			loader.disableMod(mod);
 		} catch (Throwable ex) {
@@ -79,13 +81,13 @@ public final class MModManager implements ModManager {
 	 *            The directory to load mods from.
 	 * @return
 	 */
-	public Set<Mod<?>> loadMods(File directory) {
+	public Set<Mod> loadMods(File directory) {
 		if (!directory.isDirectory()) {
 			throw new IllegalArgumentException(
 					"Specified mod directory is not a directory!");
 		}
 
-		Set<Mod<?>> result = new HashSet<Mod<?>>();
+		Set<Mod> result = new HashSet<Mod>();
 
 		for (File file : directory.listFiles()) {
 			ModLoader<?> loader = null;
@@ -102,7 +104,7 @@ public final class MModManager implements ModManager {
 				continue;
 			}
 
-			Mod<?> mod = loader.loadMod(file);
+			Mod mod = loader.loadMod(file);
 			result.add(mod);
 		}
 
@@ -120,8 +122,8 @@ public final class MModManager implements ModManager {
 		// Load the loaders; ensure all mods are able to be loaded.
 		File loadersFolder = game.getPlatform().getFileHierarchy()
 				.getLoadersFolder();
-		Set<Mod<?>> loaderMods = loadMods(loadersFolder);
-		for (Mod<?> loader : loaderMods) {
+		Set<Mod> loaderMods = loadMods(loadersFolder);
+		for (Mod loader : loaderMods) {
 			try {
 				MLogger.info("Loading loader: " + loader.getName());
 				loader.onLoad();
@@ -132,7 +134,7 @@ public final class MModManager implements ModManager {
 			}
 		}
 
-		for (Mod<?> mod : loaderMods) {
+		for (Mod mod : loaderMods) {
 			enableMod(mod);
 		}
 	}
@@ -142,8 +144,8 @@ public final class MModManager implements ModManager {
 	 */
 	public void loadMods() {
 		File modsFolder = game.getPlatform().getFileHierarchy().getModsFolder();
-		Set<Mod<?>> mods = loadMods(modsFolder);
-		for (Mod<?> mod : mods) {
+		Set<Mod> mods = loadMods(modsFolder);
+		for (Mod mod : mods) {
 			try {
 				MLogger.info("Loading mod: " + mod.getName());
 				mod.onLoad();
@@ -159,7 +161,7 @@ public final class MModManager implements ModManager {
 	 * Enable all of the mods.
 	 */
 	public void enableMods() {
-		for (Mod<?> mod : mods.values()) {
+		for (Mod mod : mods.values()) {
 			enableMod(mod);
 		}
 	}
@@ -168,7 +170,7 @@ public final class MModManager implements ModManager {
 	 * Disable all of the mods.
 	 */
 	public void disableMods() {
-		for (Mod<?> mod : mods.values()) {
+		for (Mod mod : mods.values()) {
 			disableMod(mod);
 		}
 	}
