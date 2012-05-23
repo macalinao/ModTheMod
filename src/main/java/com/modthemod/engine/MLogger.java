@@ -29,4 +29,15 @@ public final class MLogger {
 	public static Logger getLogger() {
 		return ModTheMod.getGame().getLogger();
 	}
+
+	/**
+	 * Logs a message to the console.
+	 * 
+	 * @param level
+	 * @param string
+	 * @param ex
+	 */
+	public static void log(Level level, String string, Throwable ex) {
+		getLogger().log(level, string, ex);
+	}
 }
