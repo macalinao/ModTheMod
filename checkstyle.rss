@@ -8,8 +8,8 @@
     <language>en-us</language>
     <copyright>&#169;2012</copyright>
     <item>
-      <title>File: 6,
-             Errors: 249,
+      <title>File: 7,
+             Errors: 447,
              Warnings: 0,
              Infos: 0
       </title>
@@ -52,7 +52,7 @@
                   0
                 </td>
                 <td>
-                  23
+                  165
                 </td>
               </tr>
                           <tr>
@@ -66,7 +66,7 @@
                   0
                 </td>
                 <td>
-                  45
+                  59
                 </td>
               </tr>
                           <tr>
@@ -109,6 +109,20 @@
                 </td>
                 <td>
                   59
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://thedevteam.org/checkstyle.html#com.modthemod.engine.MLogger.java">com/modthemod/engine/MLogger.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  42
                 </td>
               </tr>
                       </tbody>
