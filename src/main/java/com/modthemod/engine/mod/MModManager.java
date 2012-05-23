@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.modthemod.api.mod.InvalidModException;
 import com.modthemod.api.mod.Mod;
 import com.modthemod.api.mod.ModLoader;
 import com.modthemod.api.mod.ModManager;
@@ -104,7 +105,12 @@ public final class MModManager implements ModManager {
 				continue;
 			}
 
-			Mod mod = loader.loadMod(file);
+			Mod mod = null;
+			try {
+				mod = loader.loadMod(file);
+			} catch (InvalidModException e) {
+				MLogger.log(Level.SEVERE, "Invalid mod encountered!", e);
+			}
 			result.add(mod);
 		}
 
@@ -116,7 +122,7 @@ public final class MModManager implements ModManager {
 	 */
 	public void loadLoaders() {
 		// Java mod loaders
-		JavaModLoader javaModLoader = new JavaModLoader();
+		JavaModLoader javaModLoader = new JavaModLoader(game);
 		registerModLoader(javaModLoader);
 
 		// Load the loaders; ensure all mods are able to be loaded.
