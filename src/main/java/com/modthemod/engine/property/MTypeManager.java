@@ -79,4 +79,9 @@ public class MTypeManager implements TypeManager {
 		}
 		return map;
 	}
+
+	@Override
+	public Base getBase(String name) {
+		return baseNames.get(name);
+	}
 }

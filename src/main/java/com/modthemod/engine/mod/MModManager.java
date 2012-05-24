@@ -1,8 +1,11 @@
 package com.modthemod.engine.mod;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -89,32 +92,67 @@ public final class MModManager implements ModManager {
 		}
 
 		Set<Mod> result = new HashSet<Mod>();
+		LinkedList<File> files = new LinkedList<File>(Arrays.asList(directory
+				.listFiles()));
+		boolean failed = false;
+		boolean lastPass = false;
 
-		for (File file : directory.listFiles()) {
-			ModLoader<?> loader = null;
+		while (!failed || lastPass) {
+			failed = true;
+			Iterator<File> it = files.iterator();
 
-			for (Entry<Pattern, ModLoader<?>> entry : filters.entrySet()) {
-				Matcher match = entry.getKey().matcher(file.getName());
-				if (match.find()) {
-					loader = entry.getValue();
-					break;
+			while (it.hasNext()) {
+				File file = it.next();
+				Mod mod = null;
+
+				if (file.isDirectory()) {
+					it.remove();
+					continue; // TODO "Development mode" for mods
+				}
+
+				try {
+					mod = loadMod(file);
+					it.remove();
+				} catch (Exception ex) {
+					return null; // TODO finishme
 				}
 			}
 
-			if (loader == null) {
-				continue;
-			}
-
-			Mod mod = null;
-			try {
-				mod = loader.loadMod(file);
-			} catch (InvalidModException e) {
-				MLogger.log(Level.SEVERE, "Invalid mod encountered!", e);
-			}
-			result.add(mod);
 		}
 
 		return result;
+	}
+
+	/**
+	 * Load a mod with the given file.
+	 * 
+	 * @param file
+	 * @return
+	 */
+	public Mod loadMod(File file) {
+		ModLoader<?> loader = null;
+		String fileName = file.getName();
+
+		for (Entry<Pattern, ModLoader<?>> entry : filters.entrySet()) {
+			Matcher match = entry.getKey().matcher(fileName);
+			if (match.find()) {
+				loader = entry.getValue();
+				break;
+			}
+		}
+
+		if (loader == null) {
+			return null; // Don't load any mod. Ignore the file.
+		}
+
+		Mod mod = null;
+		try {
+			mod = loader.loadMod(file);
+		} catch (InvalidModException e) {
+			MLogger.log(Level.SEVERE, "Invalid mod encountered!", e);
+		}
+
+		return mod;
 	}
 
 	/**
