@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2012-05-22T22:30:37.081">
+<pmd version="4.2.5" timestamp="2012-05-23T20:44:59.820">
 <file name="/home/simplyianm/Desktop/modthemod/ModTheMod/src/main/java/com/modthemod/engine/entity/MEntityManager.java">
-<violation beginline="4" endline="4" begincolumn="1" endcolumn="39" rule="UnusedImports" ruleset="Import Statement Rules" package="com.modthemod.engine.entity" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'com.modthemod.api.entity.Entity'
-</violation>
-<violation beginline="12" endline="12" begincolumn="29" endcolumn="32" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.engine.entity" class="MEntityManager" variable="game" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+<violation beginline="10" endline="10" begincolumn="29" endcolumn="32" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.modthemod.engine.entity" class="MEntityManager" variable="game" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
 Avoid unused private fields such as 'game'.
+</violation>
+</file>
+<file name="/home/simplyianm/Desktop/modthemod/ModTheMod/src/main/java/com/modthemod/engine/mod/MModManager.java">
+<violation beginline="106" endline="106" begincolumn="37" endcolumn="39" rule="UnusedLocalVariable" ruleset="Unused Code Rules" package="com.modthemod.engine.mod" class="MModManager" method="loadMods" variable="mod" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedLocalVariable" priority="3">
+Avoid unused local variables such as 'mod'.
 </violation>
 </file>
 </pmd>
