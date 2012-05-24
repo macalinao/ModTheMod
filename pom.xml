@@ -230,7 +230,7 @@
                             <artifactSet>
                                 <includes>
                                     <include>rhino:js</include>
-                                    <include>com.modthemod:api</include>
+                                    <include>com.modthemod:mtm-api</include>
                                 </includes>
                             </artifactSet>
                         </configuration>
