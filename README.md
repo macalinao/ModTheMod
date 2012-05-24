@@ -32,5 +32,5 @@ dependencies the first time it is run.
 
 Copyright
 ---------
-**ModTheMod** is open-source software released under the AGPLv3 license.
+**ModTheMod** is open-source software released under the Apache license v2.
 Please see the `LICENSE.txt` file for details.
